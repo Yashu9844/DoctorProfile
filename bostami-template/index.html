@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              violetCustom: 'oklch(70.2% 0.183 293.541)',
+              purpleCustom: 'oklch(71.4% 0.203 305.504)',
+              fuchsiaCustom: 'oklch(74% 0.238 322.16)',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gradient-to-r from-fuchsiaCustom via-purpleCustom to-violetCustom min-h-screen flex items-start gap-4 p-6">
+    <!-- Sidebar -->
+    <aside class="bg-white rounded-3xl p-6 w-[250px] flex flex-col items-center shadow-md">
+      <div class="bg-gray-300 h-[235px] w-[237px] rounded-md mb-4"></div>
+      <h2 class="text-xl font-bold text-black mb-2">Bostami Hassan</h2>
+      <span class="px-3 py-1 bg-gray-100 text-sm rounded mb-4">Ui/Ux Designer</span>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-3 mb-6">
+        <button class="bg-gray-100 p-2 rounded-full">
+          <img src="https://img.icons8.com/ios-filled/16/000000/facebook.png" alt="fb" />
+        </button>
+        <button class="bg-gray-100 p-2 rounded-full">
+          <img src="https://img.icons8.com/ios-filled/16/000000/twitter.png" alt="tw" />
+        </button>
+        <button class="bg-gray-100 p-2 rounded-full">
+          <img src="https://img.icons8.com/ios-filled/16/000000/instagram-new.png" alt="ig" />
+        </button>
+        <button class="bg-gray-100 p-2 rounded-full">
+          <img src="https://img.icons8.com/ios-filled/16/000000/linkedin.png" alt="li" />
+        </button>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="bg-gray-100 rounded-xl w-full p-4 space-y-4 text-sm text-gray-800 mb-6">
+        <div>
+          <p class="font-semibold">Phone</p>
+          <p>+123 456 7890</p>
+        </div>
+        <div>
+          <p class="font-semibold">Email</p>
+          <p>Example@mail.com</p>
+        </div>
+        <div>
+          <p class="font-semibold">Location</p>
+          <p>Hong Kong China</p>
+        </div>
+        <div>
+          <p class="font-semibold">Birthday</p>
+          <p>May 27, 1990</p>
+        </div>
+      </div>
+
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
+        ↓ Download CV
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 bg-white rounded-3xl p-10 shadow-md">
+      <!-- About Section -->
+      <section class="mb-10">
+        <h1 class="text-2xl font-bold text-black mb-4 flex items-center gap-2">
+          About
+          <span class="h-1 w-10 bg-blue-600 block"></span>
+        </h1>
+        <p class="text-gray-800 mb-2">
+          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
+          I enjoy turning complex problems into simple, beautiful and intuitive designs.
+        </p>
+        <p class="text-gray-800">
+          My aim is to bring across your message and identity in the most creative way. I created web design for many
+          famous brand companies.
+        </p>
+      </section>
+
+      <!-- What I Do Section -->
+      <section>
+        <h2 class="text-xl font-bold text-black mb-6">What I Do!</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-pink-100 rounded-xl p-4">
+            <h3 class="text-lg font-semibold mb-2">Ui/Ux Design</h3>
+            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+          </div>
+          <div class="bg-blue-100 rounded-xl p-4">
+            <h3 class="text-lg font-semibold mb-2">App Development</h3>
+            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+          </div>
+          <div class="bg-orange-100 rounded-xl p-4">
+            <h3 class="text-lg font-semibold mb-2">Photography</h3>
+            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+          </div>
+          <div class="bg-red-100 rounded-xl p-4">
+            <h3 class="text-lg font-semibold mb-2">Web Development</h3>
+            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Right Navigation -->
+    <nav class="flex flex-col gap-4 bg-white rounded-3xl p-4 shadow-md">
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm">About</button>
+      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Resume</button>
+      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Works</button>
+      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Blogs</button>
+      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Contact</button>
+    </nav>
+  </body>
+</html>
