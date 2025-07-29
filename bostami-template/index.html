@@ -1,121 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor Profile</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bostami - Home Page One</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              violetCustom: 'oklch(70.2% 0.183 293.541)',
-              purpleCustom: 'oklch(71.4% 0.203 305.504)',
-              fuchsiaCustom: 'oklch(74% 0.238 322.16)',
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'prink': '#fce8f1',
+                        'catkrill': '#e6f7ff',
+                    }
+                }
+            }
+        }
     </script>
-  </head>
-  <body class="bg-gradient-to-r from-fuchsiaCustom via-purpleCustom to-violetCustom min-h-screen flex items-start gap-4 p-6">
-    <!-- Sidebar -->
-    <aside class="bg-white rounded-3xl p-6 w-[250px] flex flex-col items-center shadow-md">
-      <div class="bg-gray-300 h-[235px] w-[237px] rounded-md mb-4"></div>
-      <h2 class="text-xl font-bold text-black mb-2">Bostami Hassan</h2>
-      <span class="px-3 py-1 bg-gray-100 text-sm rounded mb-4">Ui/Ux Designer</span>
-
-      <!-- Social Icons -->
-      <div class="flex space-x-3 mb-6">
-        <button class="bg-gray-100 p-2 rounded-full">
-          <img src="https://img.icons8.com/ios-filled/16/000000/facebook.png" alt="fb" />
-        </button>
-        <button class="bg-gray-100 p-2 rounded-full">
-          <img src="https://img.icons8.com/ios-filled/16/000000/twitter.png" alt="tw" />
-        </button>
-        <button class="bg-gray-100 p-2 rounded-full">
-          <img src="https://img.icons8.com/ios-filled/16/000000/instagram-new.png" alt="ig" />
-        </button>
-        <button class="bg-gray-100 p-2 rounded-full">
-          <img src="https://img.icons8.com/ios-filled/16/000000/linkedin.png" alt="li" />
-        </button>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="bg-gray-100 rounded-xl w-full p-4 space-y-4 text-sm text-gray-800 mb-6">
-        <div>
-          <p class="font-semibold">Phone</p>
-          <p>+123 456 7890</p>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-cover bg-no-repeat" style="background-image: url('assets/img/bg/page-bg-1.jpg')">
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="h-1 w-full bg-gray-200 relative overflow-hidden max-w-xs">
+            <div class="absolute top-0 left-0 h-full w-1/2 bg-blue-500 animate-loader"></div>
         </div>
-        <div>
-          <p class="font-semibold">Email</p>
-          <p>Example@mail.com</p>
-        </div>
-        <div>
-          <p class="font-semibold">Location</p>
-          <p>Hong Kong China</p>
-        </div>
-        <div>
-          <p class="font-semibold">Birthday</p>
-          <p>May 27, 1990</p>
-        </div>
-      </div>
+    </div>
 
-      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-        ↓ Download CV
-      </button>
-    </aside>
+    <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm py-4 mb-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <a href="../index.html" class="flex items-center">
+                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-8">
+                </a>
 
-    <!-- Main Content -->
-    <main class="flex-1 bg-white rounded-3xl p-10 shadow-md">
-      <!-- About Section -->
-      <section class="mb-10">
-        <h1 class="text-2xl font-bold text-black mb-4 flex items-center gap-2">
-          About
-          <span class="h-1 w-10 bg-blue-600 block"></span>
-        </h1>
-        <p class="text-gray-800 mb-2">
-          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-          I enjoy turning complex problems into simple, beautiful and intuitive designs.
-        </p>
-        <p class="text-gray-800">
-          My aim is to bring across your message and identity in the most creative way. I created web design for many
-          famous brand companies.
-        </p>
-      </section>
-
-      <!-- What I Do Section -->
-      <section>
-        <h2 class="text-xl font-bold text-black mb-6">What I Do!</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-pink-100 rounded-xl p-4">
-            <h3 class="text-lg font-semibold mb-2">Ui/Ux Design</h3>
-            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
-          </div>
-          <div class="bg-blue-100 rounded-xl p-4">
-            <h3 class="text-lg font-semibold mb-2">App Development</h3>
-            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
-          </div>
-          <div class="bg-orange-100 rounded-xl p-4">
-            <h3 class="text-lg font-semibold mb-2">Photography</h3>
-            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
-          </div>
-          <div class="bg-red-100 rounded-xl p-4">
-            <h3 class="text-lg font-semibold mb-2">Web Development</h3>
-            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam euismod tincidunt volutpat.</p>
-          </div>
+                <div class="flex items-center space-x-4">
+                    <button class="dark-mode-toggle p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-yellow-300">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-toggle flex flex-col space-y-1.5 p-2">
+                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
+                    </button>
+                </div>
+            </div>
         </div>
-      </section>
+    </header>
+
+    <div class="mobile-menu fixed inset-0 z-30 bg-white dark:bg-gray-900 hidden overflow-y-auto">
+        </div>
+
+    <main class="container mx-auto px-4 pb-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <aside class="w-full lg:w-[20%]">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col items-center">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full border-4 border-white dark:border-gray-700 shadow-md overflow-hidden">
+                            <img src="assets/img/parsonal-info/parson-img-1.png" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <div class="px-6 py-4 text-center">
+                        <h1 class="text-xl font-bold text-gray-800 dark:text-white">Bostami Hassan</h1>
+                        <p class="text-gray-600 dark:text-gray-300 mt-1">UI/UX Designer</p>
+
+                        <div class="flex justify-center space-x-3 my-6">
+                            <a href="#" class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:opacity-90 transition">
+                                <i class="fab fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                                <i class="fab fa-linkedin-in text-sm"></i>
+                            </a>
+                        </div>
+
+                        <div class="space-y-4 text-left mb-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-mobile-screen-button text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Phone</p>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">+123 456 7890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="far fa-envelope-open-text text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Email</p>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">example@mail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-location-dot text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Location</p>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">Hong kong china</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="far fa-calendar-days text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Birthday</p>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300">May 27, 1990</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6">
+                            <button class="w-full flex items-center justify-center px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition">
+                                <i class="far fa-download mr-2"></i>
+                                Download CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="w-full lg:w-[68%]">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                    <section class="p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">About</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">
+                            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. 
+                            I enjoy turning complex problems into simple, beautiful and intuitive designs.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            My aim is to bring across your message and identity in the most creative way. 
+                            I created web design for many famous brand companies.
+                        </p>
+                    </section>
+
+                    <section class="p-8 border-t border-gray-100 dark:border-gray-700">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-6">What I do!</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-pink-50 dark:bg-gray-700 rounded-lg p-6 flex">
+                                <i class="fas fa-swatchbook text-pink-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">UI/UX Design</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 dark:bg-gray-700 rounded-lg p-6 flex">
+                                <i class="fas fa-th-large text-blue-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">App Development</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 dark:bg-gray-700 rounded-lg p-6 flex">
+                                <i class="fas fa-camera-retro text-blue-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Photography</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-pink-50 dark:bg-gray-700 rounded-lg p-6 flex">
+                                <i class="fas fa-code text-blue-500 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Web Development</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-gray-50 dark:bg-gray-700 p-8 border-t border-gray-100 dark:border-gray-700">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white text-center mb-8">Clients</h3>
+                        
+                        <div class="flex flex-wrap justify-center items-center gap-8">
+                            <img src="assets/img/client/client-logo-1.png" alt="Client" class="h-12 object-contain">
+                            <img src="assets/img/client/client-logo-2.png" alt="Client" class="h-12 object-contain">
+                            <img src="assets/img/client/client-logo-3.png" alt="Client" class="h-12 object-contain">
+                            <img src="assets/img/client/client-logo-4.png" alt="Client" class="h-12 object-contain">
+                        </div>
+                    </section>
+
+                    <footer class="py-4 text-center border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            © 2024 All Rights Reserved by 
+                            <a href="https://themeforest.net/user/elite-themes24" class="text-blue-500 hover:underline">elite-themes24</a>.
+                        </p>
+                    </footer>
+                </div>
+            </div>
+
+            <aside class="w-full lg:w-[12%]">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg py-8 flex flex-col items-center space-y-6 transition-all duration-300">
+                    
+                    <a href="#"
+                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-blue-600 text-white shadow-md">
+                    <i class="far fa-address-card text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-sm font-medium">About</span>
+                    </a>
+
+                    <a href="#"
+                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
+                    <i class="far fa-file-user text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-sm font-medium">Resume</span>
+                    </a>
+
+                    <a href="#"
+                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
+                    <i class="far fa-briefcase text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-sm font-medium">Works</span>
+                    </a>
+
+                    <a href="#"
+                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
+                    <i class="far fa-newspaper text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-sm font-medium">Blogs</span>
+                    </a>
+
+                    <a href="#"
+                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
+                    <i class="far fa-address-book text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-sm font-medium">Contact</span>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
     </main>
 
-    <!-- Right Navigation -->
-    <nav class="flex flex-col gap-4 bg-white rounded-3xl p-4 shadow-md">
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm">About</button>
-      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Resume</button>
-      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Works</button>
-      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Blogs</button>
-      <button class="bg-gray-100 px-4 py-2 rounded-xl text-sm">Contact</button>
-    </nav>
-  </body>
+    <script>
+        // Simple dark mode toggle
+        document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Hide preloader when page loads
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+    </script>
+
+    <style>
+        /* Animation for preloader */
+        @keyframes loader {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-loader {
+            animation: loader 1.5s ease-in-out infinite;
+        }
+    </style>
+</body>
 </html>
