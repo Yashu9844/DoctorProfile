@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - TailwindCSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .social-facebook:hover { background-color: #1877F2; }
+        .social-twitter:hover { background-color: #1DA1F2; }
+        .social-instagram:hover { background-color: #E4405F; }
+        .social-linkedin:hover { background-color: #0077B5; }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-indigo-100 flex items-center justify-center p-4 pt-28">
+    
+    <!-- Profile Card Container -->
+    <div class="w-full max-w-sm mx-auto">
+        
+        <!-- Card -->
+        <div class="bg-white rounded-3xl shadow-2xl relative pt-24 pb-10 px-8">
+            
+            <!-- Profile Image - Half overlapping -->
+            <div class="absolute left-1/2 -top-16 transform -translate-x-1/2 z-10">
+                <div class="w-50 h-50 rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                    <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="mt-10">
+                <!-- Name -->
+                <div class="text-center mb-2">
+                    <h4 class="text-[26px] font-bold text-gray-800 leading-tight">
+                        <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
+                    </h4>
+                </div>
+                
+                <!-- Role -->
+                <div class="text-center mb-8">
+                    <span class="inline-block bg-gray-100 text-gray-600 px-5 py-2 rounded-full text-base font-medium">Ui/Ux Designer</span>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-3 mb-8">
+                    <a href="#" class="social-facebook w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="social-twitter w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="social-instagram w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="social-linkedin w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Contact Information - Updated Design -->
+                <div class="bg-[#f5f9fa] rounded-lg p-6 mb-8 w-full space-y-4">
+                    <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
+                        <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="block text-sm text-gray-500 font-medium">Phone</span>
+                            <p class="text-lg font-semibold text-gray-900">+123 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
+                        <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fa-regular fa-envelope-open-text text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="block text-sm text-gray-500 font-medium">Email</span>
+                            <p class="text-lg font-semibold text-gray-900">Example@Mail.Com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
+                        <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="block text-sm text-gray-500 font-medium">Location</span>
+                            <p class="text-lg font-semibold text-gray-900">Hong Kong China</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                            <i class="fa-light fa-calendar-days text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="block text-sm text-gray-500 font-medium">Birthday</span>
+                            <p class="text-lg font-semibold text-gray-900">May 27, 1990</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download CV Button -->
+                <div class="text-center">
+                    <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
+                        <span class="flex items-center justify-center w-5 h-5">
+                            <i class="fa-regular fa-download"></i>
+                        </span>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
