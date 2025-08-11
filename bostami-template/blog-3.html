@@ -1,4 +1,3 @@
-
 <!Doctype html>
 <html class="no-js" lang="zxx">
 
@@ -11,9 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
+    
     <style>
         .social-facebook:hover {
             background-color: #1877F2;
@@ -40,6 +37,66 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
         }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .mobile-nav-link {
+                display: block;
+                padding: 12px 16px;
+                border-radius: 12px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .mobile-nav-link:hover {
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                color: white;
+                transform: translateX(4px);
+            }
+            
+            .mobile-nav-bg {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                transition: left 0.3s ease;
+                z-index: -1;
+            }
+            
+            .mobile-nav-link:hover .mobile-nav-bg {
+                left: 0;
+            }
+            
+            .mobile-nav-content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .header-behind {
+            z-index: 30 !important;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -48,10 +105,10 @@
     <div class='main'>
 
         <!-- header-start -->
-        <header id="main-header" class="relative z-50 py-6 bg-transparent mt-5">
+        <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
             <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
                 <a href="../index.html" class="transition-transform duration-300 hover:scale-105">
-                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-8" />
+                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-6 md:h-8" />
                 </a>
                 <button id="mobile-menu-btn" class="md:hidden relative z-50 p-2 rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl group">
                     <div class="w-6 h-6 flex flex-col justify-center items-center">
@@ -103,94 +160,93 @@
         </header>
         <!-- header-end -->
 
-
-        <div class="flex flex-col md:flex-row min-h-screen w-full px-4 sm:px-6 lg:px-8 mt-24 md:mt-[12vw]">
+        <div class="flex flex-col lg:flex-row min-h-screen w-full px-3 sm:px-6 lg:px-8 mt-6 md:mt-16 lg:mt-[12vw]">
             <!-- Left Sidebar: Profile Card -->
-            <div class="w-full md:w-[37vw] mx-auto md:mx-0 mb-6 md:mb-0 ">
-                <div class="w-full max-w-sm mx-auto md:ml-auto md:mr-0 mt-[12vw] md:mt-0">
+            <div class="w-full lg:w-[37vw] mx-auto lg:mx-0 mb-8 lg:mb-0">
+                <div class="w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto lg:mr-0 mt-8 sm:mt-12 lg:mt-0">
                     <!-- Card -->
-                    <div class="bg-white rounded-3xl shadow-2xl relative pt-24 pb-10 px-8">
-                        <!-- Profile Image - Half overlapping -->
-                        <div class="absolute left-1/2 -top-24 transform -translate-x-1/2 z-10">
-                            <div class="w-55 h-55 rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
+                        <!-- Profile Image - Responsive sizing -->
+                        <div class="absolute left-1/2 -top-12 sm:-top-16 lg:-top-24 transform -translate-x-1/2 z-10">
+                            <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
                                 <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
                             </div>
                         </div>
 
                         <!-- Content -->
-                        <div class="mt-10">
+                        <div class="mt-6 sm:mt-8 lg:mt-10">
                             <!-- Name -->
                             <div class="text-center mb-2">
-                                <h4 class="text-[26px] font-bold text-gray-800 leading-tight">
+                                <h4 class="text-xl sm:text-2xl lg:text-[26px] font-bold text-gray-800 leading-tight">
                                     <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
                                 </h4>
                             </div>
 
                             <!-- Role -->
-                            <div class="text-center mb-8">
-                                <span class="inline-block bg-gray-100 text-gray-600 px-5 py-2 rounded-full text-base font-medium">Ui/Ux Designer</span>
+                            <div class="text-center mb-6 sm:mb-8">
+                                <span class="inline-block bg-gray-100 text-gray-600 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
                             </div>
 
                             <!-- Social Links -->
-                            <div class="flex justify-center space-x-3 mb-8">
-                                <a href="#" class="social-facebook w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                            <div class="flex justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8">
+                                <a href="#" class="social-facebook w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-facebook-f text-xs sm:text-sm"></i>
                                 </a>
-                                <a href="#" class="social-twitter w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-twitter text-sm"></i>
+                                <a href="#" class="social-twitter w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-twitter text-xs sm:text-sm"></i>
                                 </a>
-                                <a href="#" class="social-instagram w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-instagram text-sm"></i>
+                                <a href="#" class="social-instagram w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-instagram text-xs sm:text-sm"></i>
                                 </a>
-                                <a href="#" class="social-linkedin w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                <a href="#" class="social-linkedin w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-linkedin-in text-xs sm:text-sm"></i>
                                 </a>
                             </div>
 
                             <!-- Contact Information -->
-                            <div class="bg-[#f5f9fa] rounded-lg p-6 mb-8 w-full space-y-4">
-                                <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                            <div class="bg-[#f5f9fa] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 w-full space-y-3 sm:space-y-4">
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-pink-100 text-pink-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-mobile-screen-button text-base sm:text-lg"></i>
                                     </div>
-                                    <div class="flex-1">
-                                        <span class="block text-sm text-gray-500 font-medium">Phone</span>
-                                        <p class="text-lg font-semibold text-gray-900">+123 456 7890</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-regular fa-envelope-open-text text-lg"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <span class="block text-sm text-gray-500 font-medium">Email</span>
-                                        <p class="text-lg font-semibold text-gray-900">Example@Mail.Com</p>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">+123 456 7890</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-location-dot text-lg"></i>
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-green-100 text-green-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-regular fa-envelope-open-text text-base sm:text-lg"></i>
                                     </div>
-                                    <div class="flex-1">
-                                        <span class="block text-sm text-gray-500 font-medium">Location</span>
-                                        <p class="text-lg font-semibold text-gray-900">Hong Kong China</p>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Example@Mail.Com</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center space-x-4">
-                                    <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-light fa-calendar-days text-lg"></i>
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-orange-100 text-orange-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-location-dot text-base sm:text-lg"></i>
                                     </div>
-                                    <div class="flex-1">
-                                        <span class="block text-sm text-gray-500 font-medium">Birthday</span>
-                                        <p class="text-lg font-semibold text-gray-900">May 27, 1990</p>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 sm:space-x-4">
+                                    <div class="bg-purple-100 text-purple-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-light fa-calendar-days text-base sm:text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">May 27, 1990</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Download CV Button -->
                             <div class="text-center">
-                                <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
-                                    <span class="flex items-center justify-center w-5 h-5">
+                                <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wide">
+                                    <span class="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
                                         <i class="fa-regular fa-download"></i>
                                     </span>
                                     <span>Download CV</span>
@@ -202,9 +258,9 @@
             </div>
 
             <!-- Right Side: Content + Nav Bar -->
-            <div class="flex-1 p-6 md:p-12 relative">
+            <div class="flex-1 p-4 sm:p-6 lg:p-12 relative">
                 <!-- Navigation Bar (Only visible on desktop) -->
-                <div class="hidden md:block absolute top-0 right-[4vw]">
+                <div class="hidden lg:block absolute top-0 right-[4vw]">
                     <div class="flex flex-row space-x-3 bg-white rounded-3xl p-4 shadow-lg">
                         <!-- About -->
                         <a href="home-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
@@ -234,70 +290,68 @@
                     </div>
                 </div>
 
-                <!-- Optional Divider (Visible on larger screens) -->
-                <div class="w-full md:flex-1 h-px mt-6 md:mt-18">
-                    <main class="py-12 px-4">
-                        <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-12 fade-slide-up">
+                <!-- Main Content -->
+                <div class="w-full lg:flex-1 h-px mt-6 lg:mt-18">
+                    <main class="py-6 sm:py-8 lg:py-12 px-2 sm:px-4">
+                        <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
                             <!-- Title Section -->
-                            <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                                <div class="flex items-center gap-6">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-black">Portfolio</h2>
-                                    <div class="h-1 w-20 md:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
+                            <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+                                <div class="flex items-center gap-4 sm:gap-6">
+                                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Portfolio</h2>
+                                    <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
                                 </div>
-                                <!-- Responsive Filter Section -->
-
                             </div>
 
                             <!-- Portfolio Grid -->
-                            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                                 
                                 <!-- Portfolio Item 2 -->
                                 <article class="portfolio-item design mockup show group cursor-pointer">
-                                    <div class="p-6 rounded-xl bg-blue-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-blue-100">
-                                        <div class="overflow-hidden rounded-xl mb-4 transition-transform duration-300 group-hover:scale-105">
-                                            <img src="assets/img/work/work-img-2.png" alt="Aura Dione" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-blue-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-blue-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-2.png" alt="Aura Dione" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                                         </div>
                                         <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
-                                        <h6 class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-blue-500 transition-colors duration-300">Aura Dione</h6>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-500 transition-colors duration-300">Aura Dione</h6>
                                     </div>
                                 </article>
                                 <!-- Portfolio Item 3 -->
                                 <article class="portfolio-item logo mockup show group cursor-pointer">
-                                    <div class="p-6 rounded-xl bg-green-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-green-100">
-                                        <div class="overflow-hidden rounded-xl mb-4 transition-transform duration-300 group-hover:scale-105">
-                                            <img src="assets/img/work/work-img-3.png" alt="T-Shirt Design" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-green-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-green-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-3.png" alt="T-Shirt Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                                         </div>
                                         <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
-                                        <h6 class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-green-500 transition-colors duration-300">T-Shirt Design</h6>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-green-500 transition-colors duration-300">T-Shirt Design</h6>
                                     </div>
                                 </article>
                                 <!-- Portfolio Item 4 -->
                                 <article class="portfolio-item mockup show group cursor-pointer">
-                                    <div class="p-6 rounded-xl bg-purple-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-purple-100">
-                                        <div class="overflow-hidden rounded-xl mb-4 transition-transform duration-300 group-hover:scale-105">
-                                            <img src="assets/img/work/work-img-4.png" alt="Packaging Box" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-purple-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-purple-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-4.png" alt="Packaging Box" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                                         </div>
                                         <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
-                                        <h6 class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-purple-500 transition-colors duration-300">Packaging Box</h6>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-purple-500 transition-colors duration-300">Packaging Box</h6>
                                     </div>
                                 </article>
                                 <!-- Portfolio Item 5 -->
                                 <article class="portfolio-item design logo show group cursor-pointer">
-                                    <div class="p-6 rounded-xl bg-yellow-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-yellow-100">
-                                        <div class="overflow-hidden rounded-xl mb-4 transition-transform duration-300 group-hover:scale-105">
-                                            <img src="assets/img/work/work-img-5.png" alt="Modern Bag Design" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-yellow-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-yellow-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-5.png" alt="Modern Bag Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                                         </div>
                                         <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
-                                        <h6 class="mt-2 text-lg font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors duration-300">Modern Bag Design</h6>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors duration-300">Modern Bag Design</h6>
                                     </div>
                                 </article>
 
                             </div>
 
                             <!-- Footer -->
-                            <div class="mt-16">
-                                <div class="py-6 bg-gray-50 rounded-xl text-center">
-                                    <p class="text-gray-500 text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
+                            <div class="mt-12 sm:mt-16">
+                                <div class="py-4 sm:py-6 bg-gray-50 rounded-xl text-center">
+                                    <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
                                 </div>
                             </div>
                         </section>
@@ -306,7 +360,7 @@
             </div>
         </div>
 
-        <!-- blog-modal-start -->
+        <!-- portfolio-modal-start -->
         <div id="portfolio-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
             <!-- Backdrop -->
             <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
@@ -314,61 +368,48 @@
             <!-- Modal Content -->
             <div class="modal-content relative w-full max-w-md md:max-w-lg lg:max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
                 <!-- Header (Sticky) -->
-                <div class="bg-white px-6 py-4 border-b border-gray-200 sticky top-0 z-10">
-                    <h3 id="modal-title" class="text-2xl font-bold text-gray-900">Project Title</h3>
-                    <p id="modal-sub" class="text-sm text-gray-500 mt-1">Category & details</p>
+                <div class="bg-white px-6 py-4 border-b border-gray-200 sticky top-0 z-10 flex justify-between items-start">
+                    <div>
+                        <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900">Project Title</h3>
+                        <p id="modal-sub" class="text-xs sm:text-sm text-gray-500 mt-1">Category & details</p>
+                    </div>
+                    <button id="modal-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <i class="fas fa-times text-gray-500"></i>
+                    </button>
                 </div>
 
                 <!-- Scrollable Content -->
-                <div class="flex-1 p-6 overflow-y-auto custom-scrollbar space-y-6">
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 sm:space-y-6">
                     <!-- Project Info Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-pink-50 to-red-50 rounded-xl border border-pink-100">
-                            <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
-                                <i class="fas fa-file-alt text-white text-sm"></i>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-pink-50 to-red-50 rounded-xl border border-pink-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-file-alt text-white text-xs sm:text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Project</p>
-                                <p class="text-sm font-bold text-gray-900">Website</p>
+                                <p class="text-xs sm:text-sm font-bold text-gray-900">Photoshop, Figma</p>
                             </div>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-blue-100">
-                            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-md">
-                                <i class="fas fa-user text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Client</p>
-                                <p class="text-sm font-bold text-gray-900">Envato</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl border border-green-100">
-                            <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center shadow-md">
-                                <i class="fas fa-code text-white text-sm"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Languages</p>
-                                <p class="text-sm font-bold text-gray-900">Photoshop, Figma</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-100">
-                            <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
-                                <i class="fas fa-link text-white text-sm"></i>
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-link text-white text-xs sm:text-sm"></i>
                             </div>
                             <div>
                                 <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Preview</p>
-                                <a id="modal-preview" href="#" class="text-sm font-bold text-blue-600 hover:text-blue-700" target="_blank">Visit Site</a>
+                                <a id="modal-preview" href="#" class="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700" target="_blank">Visit Site</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project Image -->
-                    <div class="w-full h-48 md:h-64 lg:h-80 bg-gray-100 rounded-xl overflow-hidden shadow-inner border">
+                    <div class="w-full h-40 sm:h-48 md:h-64 lg:h-80 bg-gray-100 rounded-xl overflow-hidden shadow-inner border">
                         <img id="modal-img" src="assets/img/work/work-img-1.png" alt="Project Image" class="w-full h-full object-cover">
                     </div>
 
                     <!-- Project Description -->
                     <div class="text-gray-700 text-sm md:text-base leading-relaxed space-y-4">
-                        <p class="first-letter:text-4xl first-letter:font-bold first-letter:text-pink-500 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                        <p class="first-letter:text-3xl sm:first-letter:text-4xl first-letter:font-bold first-letter:text-pink-500 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequntur quo obcaecati rerum sit non.
                         </p>
                         <p>
@@ -381,19 +422,17 @@
                 </div>
 
                 <!-- Footer (Sticky) -->
-                <div class="bg-gray-50 px-6 py-4 flex flex-col sm:flex-row sm:justify-between gap-3 border-t border-gray-200 sticky bottom-0 z-10">
-                    <button id="modal-close-footer" class="px-5 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium transition-colors duration-300">
+                <div class="bg-gray-50 px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:justify-between gap-3 border-t border-gray-200 sticky bottom-0 z-10">
+                    <button id="modal-close-footer" class="px-4 sm:px-5 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium transition-colors duration-300 text-sm sm:text-base">
                         Close
                     </button>
-                    <a id="modal-action-btn" href="#" target="_blank" class="px-5 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 rounded-lg font-medium shadow transition-all duration-300 text-center">
+                    <a id="modal-action-btn" href="#" target="_blank" class="px-4 sm:px-5 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 rounded-lg font-medium shadow transition-all duration-300 text-center text-sm sm:text-base">
                         Visit Site
                     </a>
                 </div>
             </div>
         </div>
-
-        <!-- blog-modal-end -->
-
+        <!-- portfolio-modal-end -->
 
     </div>
 
@@ -402,13 +441,34 @@
         // DOM Elements (Modal related only)
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         const modal = document.getElementById('portfolio-modal');
-        const modalClose = document.getElementById('modal-close-footer'); // Updated to footer button
+        const modalClose = document.getElementById('modal-close-footer');
+        const modalCloseTop = document.getElementById('modal-close');
         const modalTitle = document.getElementById('modal-title');
         const modalSub = document.getElementById('modal-sub');
         const modalImg = document.getElementById('modal-img');
         const modalPreview = document.getElementById('modal-preview');
         const modalActionBtn = document.getElementById('modal-action-btn');
         const mainHeader = document.getElementById('main-header');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Close mobile menu when clicking backdrop
+        mobileMenuBackdrop.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
 
         // Open Modal
         portfolioItems.forEach(item => {
@@ -437,7 +497,7 @@
             });
         });
 
-        // Close Modal
+        // Close Modal Function
         const closeModal = () => {
             modal.classList.remove('opacity-100');
             modal.classList.add('opacity-0');
@@ -449,8 +509,9 @@
             }, 300);
         };
 
+        // Modal Close Events
         modalClose.addEventListener('click', closeModal);
-        document.getElementById('modal-close').addEventListener('click', closeModal); // Top close button
+        modalCloseTop.addEventListener('click', closeModal);
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal || e.target.classList.contains('bg-black')) {
@@ -465,12 +526,21 @@
             }
         });
 
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('translate-x-full');
+        // Prevent scrolling issues on mobile
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+        });
+
+        // Handle window resize for responsive adjustments
+        window.addEventListener('resize', () => {
+            // Close mobile menu on resize to larger screens
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('translate-x-full');
+            }
         });
     </script>
 </body>
 
 </html>
+                                <p class="text-xs sm:text-sm font-bold text-gray-900"
