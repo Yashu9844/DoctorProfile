@@ -299,19 +299,8 @@
       <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
     </div>
 
-    <!-- Responsive Filter Section -->
-    <div class="relative mt-4 lg:mt-0">
-      <button id="filter-toggle" class="lg:hidden flex items-center justify-between w-full px-4 py-2 bg-gray-100 rounded-lg transition-all duration-300 hover:bg-gray-200">
-        <span class="text-gray-700 font-medium">Filter Projects</span>
-        <i id="filter-icon" class="fas fa-chevron-down text-gray-500 transition-transform duration-300"></i>
-      </button>
-      <ul id="filter-controls" class="lg:flex lg:gap-6 lg:items-center text-gray-600 lg:opacity-100 lg:visible lg:translate-y-0 lg:relative lg:bg-transparent lg:shadow-none lg:rounded-none lg:p-0 lg:mt-0 absolute top-full left-0 right-0 mt-2 bg-white shadow-lg rounded-lg p-4 opacity-0 invisible transform -translate-y-2 transition-all duration-300 z-10">
-        <li class="filter-btn cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gray-100 lg:hover:bg-transparent filter-active" data-filter="*">All</li>
-        <li class="filter-btn cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gray-100 lg:hover:bg-transparent" data-filter="mockup">Mockup</li>
-        <li class="filter-btn cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gray-100 lg:hover:bg-transparent" data-filter="design">Graphic </li>
-        <li class="filter-btn cursor-pointer py-2 px-3 rounded-lg transition-all duration-300 hover:bg-gray-100 lg:hover:bg-transparent" data-filter="logo">Logo</li>
-      </ul>
-    </div>
+  
+   
   </div>
 
   <!-- Portfolio Grid -->
@@ -485,6 +474,7 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+        
 
         // Mobile Menu Toggle
         mobileMenuBtn.addEventListener('click', () => {
