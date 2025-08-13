@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami - Blog Three</title>
+    <title>Bostami - Resume</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -97,80 +97,12 @@
             background: linear-gradient(180deg, #8b5cf6, #7c3aed);
             border-radius: 4px;
         }
-
-        /* Updated layout styles */
-        .layout-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 1024px) {
-            .layout-container {
-                flex-direction: row;
-                align-items: flex-start;
-                padding: 0 1rem;
-                gap: 0.5rem; /* Reduced gap between profile and main content */
-            }
-        }
-
-        .profile-sidebar {
-            width: 100%;
-        }
-
-        @media (min-width: 1024px) {
-            .profile-sidebar {
-                width: 37vw;
-                min-width: 300px;
-                max-width: 420px;
-                flex-shrink: 0;
-            }
-        }
-
-        .main-content-area {
-            flex: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .nav-sidebar {
-            display: none; /* Hide by default on mobile */
-        }
-
-        @media (min-width: 1024px) {
-            .nav-sidebar {
-                display: flex;
-                flex-direction: column;
-                width: 80px;
-                flex-shrink: 0;
-                margin-left: 0.5rem;
-            }
-        }
-
-        .profile-card-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 1rem 0;
-        }
-
-        @media (min-width: 1024px) {
-            .profile-card-wrapper {
-                justify-content: flex-end;
-                padding: 1.5rem 0;
-                padding-right: 0.5rem; /* Reduced right padding */
-            }
-        }
     </style>
 </head>
 
 <body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/page-bg-1.jpg')">
 
     <div class='main'>
-
         <!-- header-start -->
         <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
             <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -227,162 +159,168 @@
         </header>
         <!-- header-end -->
 
-        <!-- Main Layout Container -->
-        <div class="flex min-h-screen layout-container mt-10 md:mt-36">
-            <div class="min-h-screen w-full md:w-[30vw] ">
-                           <div class="w-full lg:w-[28vw] mx-auto lg:mx-0 mb-8 lg:mb-0">
-                <div class="w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto lg:mr-0 mt-8 sm:mt-12 lg:mt-0">
-                    <!-- Card -->
-                    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
-                        <!-- Profile Image - Responsive sizing -->
-                        <div class="absolute left-1/2 -top-12 sm:-top-16 lg:-top-24 transform -translate-x-1/2 z-10">
-                            <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
-                                <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+        <!-- Main Layout Container - Responsive Flex Layout -->
+        <div class="flex flex-col md:flex-row min-h-screen max-w-7xl mt-14 md:mt-32 mx-auto px-4 py-6 md:py-10 gap-6">
+            <!-- Profile Sidebar - Responsive Width -->
+            <div class="w-full md:w-1/3 lg:w-2/5">
+                <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-20 sm:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
+                    <!-- Profile Image - Responsive sizing -->
+                    <div class="absolute left-1/2 -top-16 sm:-top-20 lg:-top-24 transform -translate-x-1/2 z-10">
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                            <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="mt-8 sm:mt-10 lg:mt-12 text-center space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <h4 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
+                                <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
+                            </h4>
+                        </div>
+
+                        <!-- Role -->
+                        <div>
+                            <span class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-3 sm:space-x-4">
+                            <a href="#" class="social-facebook w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#" class="social-twitter w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#" class="social-instagram w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#" class="social-linkedin w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in text-sm"></i>
+                            </a>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="bg-[#f5f9fa] rounded-lg p-5 sm:p-6 space-y-4">
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">+123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-regular fa-envelope-open-text text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Example@Mail.Com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-light fa-calendar-days text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">May 27, 1990</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="mt-6 sm:mt-8 lg:mt-10">
-                            <!-- Name -->
-                            <div class="text-center mb-2">
-                                <h4 class="text-xl sm:text-2xl lg:text-[26px] font-bold text-gray-800 leading-tight">
-                                    <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
-                                </h4>
-                            </div>
-
-                            <!-- Role -->
-                            <div class="text-center mb-6 sm:mb-8">
-                                <span class="inline-block bg-gray-100 text-gray-600 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
-                            </div>
-
-                            <!-- Social Links -->
-                            <div class="flex justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8">
-                                <a href="#" class="social-facebook w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-facebook-f text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-twitter w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-twitter text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-instagram w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-instagram text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-linkedin w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-linkedin-in text-xs sm:text-sm"></i>
-                                </a>
-                            </div>
-
-                            <!-- Contact Information -->
-                            <div class="bg-[#f5f9fa] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 w-full space-y-3 sm:space-y-4">
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-pink-100 text-pink-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-mobile-screen-button text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">+123 456 7890</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-green-100 text-green-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-regular fa-envelope-open-text text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Example@Mail.Com</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-orange-100 text-orange-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-location-dot text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Hong Kong China</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4">
-                                    <div class="bg-purple-100 text-purple-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-light fa-calendar-days text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">May 27, 1990</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Download CV Button -->
-                            <div class="text-center">
-                                <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wide">
-                                    <span class="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
-                                        <i class="fa-regular fa-download"></i>
-                                    </span>
-                                    <span>Download CV</span>
-                                </a>
-                            </div>
+                        <!-- Download CV Button -->
+                        <div class="text-center">
+                            <a href="#" class="download-btn inline-flex items-center space-x-3 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
+                                <i class="fa-regular fa-download"></i>
+                                <span>Download CV</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="min-h-screen w-full md:w-[52vw] ">
-                <div class="w-full lg:flex-1 ">
-    <main class="pb-6 sm:pb-8 lg:pb-12 px-2 sm:px-4">
-        <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
-            <!-- Title Section -->
-            <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
-                <div class="flex items-center gap-4 sm:gap-6">
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Contact</h2>
-                    <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
-                </div>
+
+            <!-- Main Content Area - Responsive Width -->
+          <div class="w-full md:w-[70%] lg:w-[85%]">
+                                       <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
+                            <!-- Title Section -->
+                            <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+                                <div class="flex items-center gap-4 sm:gap-6">
+                                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Blog</h2>
+                                    <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Grid -->
+                            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                                
+                                <!-- Portfolio Item 2 -->
+                                <article class="portfolio-item design mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-blue-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-blue-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-2.png" alt="Aura Dione" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-500 transition-colors duration-300">Aura Dione</h6>
+                                    </div>
+                                </article>
+                                <!-- Portfolio Item 3 -->
+                                <article class="portfolio-item logo mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-green-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-green-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-3.png" alt="T-Shirt Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-green-500 transition-colors duration-300">T-Shirt Design</h6>
+                                    </div>
+                                </article>
+                                <!-- Portfolio Item 4 -->
+                                <article class="portfolio-item mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-purple-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-purple-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-4.png" alt="Packaging Box" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-purple-500 transition-colors duration-300">Packaging Box</h6>
+                                    </div>
+                                </article>
+                                <!-- Portfolio Item 5 -->
+                                <article class="portfolio-item design logo show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-yellow-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-yellow-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-5.png" alt="Modern Bag Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors duration-300">Modern Bag Design</h6>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="mt-12 sm:mt-16">
+                                <div class="py-4 sm:py-6 bg-gray-50 rounded-xl text-center">
+                                    <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
+                                </div>
+                            </div>
+                        </section>
             </div>
 
-            <!-- Contact Form -->
-            <div class="space-y-6">
-                <h3 class="text-base sm:text-lg text-gray-600">I'm Always Open To Discussing Product</h3>
-                <h3 class="text-xl sm:text-2xl font-bold">design work or partnerships.</h3>
-                
-                <form action="https://formspree.io/f/xoqrgaab" method="post" class="space-y-6">
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Name *</label>
-                        <input type="text" name="name" required 
-                               class="w-full px-4 py-3 border-b-2 border-gray-200 bg-transparent focus:border-pink-500 focus:outline-none transition-colors duration-300" />
-                    </div>
-                    
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Email *</label>
-                        <input type="email" name="email" required 
-                               class="w-full px-4 py-3 border-b-2 border-gray-200 bg-transparent focus:border-pink-500 focus:outline-none transition-colors duration-300" />
-                    </div>
-                    
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Message *</label>
-                        <textarea name="message" rows="5" required 
-                                  class="w-full px-4 py-3 border-b-2 border-gray-200 bg-transparent focus:border-pink-500 focus:outline-none transition-colors duration-300"></textarea>
-                    </div>
-                    
-                    <div class="pt-2">
-                        <button
-                            type="submit"
-                            class="relative inline-block px-6 py-3 bg-white border-2 border-pink-500 text-pink-500 font-medium rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 hover:text-white hover:shadow-lg group"
-                        >
-                            <span class="relative z-10">Submit</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
 
-            <!-- Footer -->
-            <div class="mt-12 sm:mt-16">
-                <div class="py-4 sm:py-6 bg-gray-50 rounded-xl text-center">
-                    <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-</div>
-            </div>
-            <div class=" min-h-screen hidden md:block ">
+            <!-- naviagtion bar  -->
+                                     <div class=" min-h-screen hidden md:block ">
                   <div class="flex flex-col space-y-3 bg-white rounded-3xl p-4 shadow-lg">
     <!-- About -->
     <a href="home-3.html"
@@ -420,7 +358,6 @@
     </a>
   </div>
             </div>
-            
         </div>
 
         <!-- portfolio-modal-start -->
@@ -604,5 +541,4 @@
         });
     </script>
 </body>
-
 </html>

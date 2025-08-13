@@ -1,459 +1,544 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami - Portfolio</title>
+    <title>Bostami - portfolio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        .social-facebook:hover {
+            background-color: #1877F2;
+        }
+        
+        .social-twitter:hover {
+            background-color: #1DA1F2;
+        }
+        
+        .social-instagram:hover {
+            background-color: #E4405F;
+        }
+        
+        .social-linkedin:hover {
+            background-color: #0077B5;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <link rel="stylesheet" href="assets/css/swipper.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .mobile-nav-link {
+                display: block;
+                padding: 12px 16px;
+                border-radius: 12px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .mobile-nav-link:hover {
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                color: white;
+                transform: translateX(4px);
+            }
+            
+            .mobile-nav-bg {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                transition: left 0.3s ease;
+                z-index: -1;
+            }
+            
+            .mobile-nav-link:hover .mobile-nav-bg {
+                left: 0;
+            }
+            
+            .mobile-nav-content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .header-behind {
+            z-index: 30 !important;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/page-bg-1.jpg')">
 
-    <div class="page-wrapper home-1" data-background="assets/img/bg/page-bg-1.jpg">
-
-        <!-- PRELOADER -->
-        <div id="preloader">
-            <div class="loader_line"></div>
-        </div>
-        <!-- /PRELOADER -->
-
+    <div class='main'>
         <!-- header-start -->
-        <div class="bostami-header-area mb-30 z-index-5">
-            <div class="container">
-                <div class="bostami-header-wrap">
-                    <div class="row align-items-center">
-
-                        <!-- logo -->
-                        <div class="col-6">
-                            <div class="bostami-header-logo">
-                                <a class="site-logo" href="../index.html">
-                                    <img src="assets/img/logo/logo-2.png" alt="">
-                                </a>
-                            </div>
+        <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+                <a href="../index.html" class="transition-transform duration-300 hover:scale-105">
+                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-6 md:h-8" />
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden relative z-50 p-2 rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center">
+                        <span id="hamburger-line-1" class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-pink-500"></span>
+                        <span id="hamburger-line-2" class="block w-5 h-0.5 bg-gray-700 mt-1 transition-all duration-300 group-hover:bg-pink-500"></span>
+                        <span id="hamburger-line-3" class="block w-5 h-0.5 bg-gray-700 mt-1 transition-all duration-300 group-hover:bg-pink-500"></span>
+                    </div>
+                </button>
+                <nav class="hidden md:flex items-center">
+                    <a href="contact-3.html" class="px-4 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                        <i class="fa-light fa-address-book text-lg"></i> Contact
+                    </a>
+                </nav>
+                <div id="mobile-menu" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+                    <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl">
+                        <div class="flex flex-col pt-20 px-6 space-y-2">
+                            <a href="home-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-home text-lg"></i> Home
+                                </span>
+                            </a>
+                            <a href="resume-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-file-user text-lg"></i> Resume
+                                </span>
+                            </a>
+                            <a href="portfolio-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-briefcase text-lg"></i> Works
+                                </span>
+                            </a>
+                            <a href="blog-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-newspaper text-lg"></i> Blogs
+                                </span>
+                            </a>
+                            <a href="contact-3.html" class="mt-4 px-4 py-3 text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
+                                <i class="fa-light fa-address-book text-lg"></i> Contact
+                            </a>
                         </div>
-
-                        <!-- menu btn -->
-                        <div class="col-6">
-                            <div class="bostami-header-menu-btn text-right">
-                                <div class="dark-btn dark-btn-stored dark-btn-icon">
-                                    <i class="fa-light fa-moon"></i>
-                                    <i class="fa-light fa-sun"></i>
-                                </div>
-                                <div class="menu-btn toggle_menu">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
-                <!-- mobile menu -->
-                <div class="mobile-menu-wrap">
-                    <div class="mobile-menu mobile_menu">
-                    </div>
-                </div>
-
             </div>
-        </div>
+        </header>
         <!-- header-end -->
 
+        <!-- Main Layout Container - Responsive Flex Layout -->
+        <div class="flex flex-col md:flex-row min-h-screen max-w-7xl mt-14 md:mt-32 mx-auto px-4 py-6 md:py-10 gap-6">
+            <!-- Profile Sidebar - Responsive Width -->
+            <div class="w-full md:w-1/3 lg:w-2/5">
+                <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-20 sm:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
+                    <!-- Profile Image - Responsive sizing -->
+                    <div class="absolute left-1/2 -top-16 sm:-top-20 lg:-top-24 transform -translate-x-1/2 z-10">
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                            <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
 
-        <div class="container z-index-3">
-            <div class="row">
-
-                <!-- parsonal-info-start -->
-                <div class="col-xxl-3 col-xl-3">
-                    <div class="bostami-parsonal-info-area">
-                        <div class="bostami-parsonal-info-wrap">
-
-                            <!-- img -->
-                            <div class="bostami-parsonal-info-img">
-                                <img src="assets/img/parsonal-info/parson-img-1.png" alt="avatar">
-                            </div>
-
-                            <!-- name -->
-                            <h4 class="bostami-parsonal-info-name">
-                                <a href="#">Bostami Hassan</a>
+                    <!-- Content -->
+                    <div class="mt-8 sm:mt-10 lg:mt-12 text-center space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <h4 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
+                                <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
                             </h4>
-                            <span class="bostami-parsonal-info-bio mb-15">Ui/Ux Designer</span>
+                        </div>
 
-                            <!-- socail link -->
-                            <ul class="bostami-parsonal-info-social-link mb-30">
-                                <li>
-                                    <a href="#" class="facebook">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <i class="fa-brands fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="instagram">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="linkedin">
-                                        <i class="fa-brands fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <!-- Role -->
+                        <div>
+                            <span class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
+                        </div>
 
-                            <!-- contact -->
-                            <div class="bostami-parsonal-info-contact mb-30">
-                                <div class="bostami-parsonal-info-contact-item phone">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-mobile-screen-button"></i>
-                                    </div>
-                                    <div class="text">
-                                        <span>Phone</span>
-                                        <p>+123 456 7890</p>
-                                    </div>
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-3 sm:space-x-4">
+                            <a href="#" class="social-facebook w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#" class="social-twitter w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#" class="social-instagram w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#" class="social-linkedin w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in text-sm"></i>
+                            </a>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="bg-[#f5f9fa] rounded-lg p-5 sm:p-6 space-y-4">
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
                                 </div>
-
-
-                                <div class="bostami-parsonal-info-contact-item email">
-                                    <div class="icon">
-                                        <i class="fa-regular fa-envelope-open-text"></i>
-                                    </div>
-                                    <div class="text">
-                                        <span>Email</span>
-                                        <p>example@mail.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="bostami-parsonal-info-contact-item location">
-                                    <div class="icon">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                    </div>
-                                    <div class="text">
-                                        <span>Location</span>
-                                        <p>Hong kong china</p>
-                                    </div>
-                                </div>
-
-                                <div class="bostami-parsonal-info-contact-item calendar">
-                                    <div class="icon">
-                                        <i class="fa-light fa-calendar-days"></i>
-                                    </div>
-                                    <div class="text">
-                                        <span>Birthday</span>
-                                        <p>May 27, 1990</p>
-                                    </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">+123 456 7890</p>
                                 </div>
                             </div>
-
-                            <!-- cv button -->
-                            <div class="bostami-parsonal-info-btn">
-                                <a class="btn-1" href="#">
-                                    <span class="icon">
-                                        <i class="fa-regular fa-download"></i>
-                                    </span>
-                                    download cv
-                                </a>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-regular fa-envelope-open-text text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Example@Mail.Com</p>
+                                </div>
                             </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-light fa-calendar-days text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">May 27, 1990</p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <!-- Download CV Button -->
+                        <div class="text-center">
+                            <a href="#" class="download-btn inline-flex items-center space-x-3 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
+                                <i class="fa-regular fa-download"></i>
+                                <span>Download CV</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- personal-info-end -->
+            </div>
 
-                <!-- resume-page-start -->
-                <div class="col-xxl-8 col-xl-9">
-                    <div class="bostami-page-content-wrap">
-
-                        <!-- page title -->
-                        <div class="section-wrapper pl-60 pr-60 pt-60">
-                            <div class="bostami-page-title-wrap mb-15">
-                                <h2 class="page-title">Portfolio</h2>
-                            </div>
-                        </div>
-
-
-                        <div class="section-wrapper pr-60 pl-60 mb-60">
-                            <div class="row">
-
-                                <div class="col-12">
-                                    <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
-                                        <li class="fillter-btn is-checked " data-filter="*">All</li>
-                                        <li class="fillter-btn" data-filter=".mockup">Mockup</li>
-                                        <li class="fillter-btn" data-filter=".design"> Graphic Design</li>
-                                        <li class="fillter-btn" data-filter=".logo"> logo</li>
-                                    </ul>
+            <!-- Main Content Area - Responsive Width -->
+          <div class="w-full md:w-[70%] lg:w-[85%]">
+                                       <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
+                            <!-- Title Section -->
+                            <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+                                <div class="flex items-center gap-4 sm:gap-6">
+                                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Portfolio</h2>
+                                    <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
                                 </div>
+                            </div>
 
-                                <div class="col-12">
-                                    <div id="fillter-item-active" class="fillter-item-wrap">
-                                        <div class="grid-sizer"></div>
-
-                                        <!-- signle item -->
-                                        <div class=" isotop-item  logo">
-                                            <div class="fillter-item bg-prink">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-1.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#portfolio-1">Chul
-                                                        urina</a>
-                                                </h6>
-                                            </div>
+                            <!-- Portfolio Grid -->
+                            <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                                
+                                <!-- Portfolio Item 2 -->
+                                <article class="portfolio-item design mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-blue-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-blue-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-2.png" alt="Aura Dione" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                                         </div>
-
-                                        <!-- signle item -->
-                                        <div class=" isotop-item design mockup">
-                                            <div class="fillter-item bg-catkrill">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-2.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#portfolio-1">Aura
-                                                        Dione</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-
-                                        <!-- signle item -->
-                                        <div class=" isotop-item logo mockup">
-                                            <div class="fillter-item bg-catkrill ">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-3.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal"
-                                                        data-bs-target="#portfolio-1">T-Shirt Design</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-
-                                        <!-- signle item -->
-                                        <div class=" isotop-item mockup">
-                                            <div class="fillter-item bg-prink">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-4.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal"
-                                                        data-bs-target="#portfolio-1">Packaging Box</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-
-                                        <!-- signle item -->
-                                        <div class="isotop-item design logo">
-                                            <div class="fillter-item bg-prink">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-5.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal"
-                                                        data-bs-target="#portfolio-1">Modern Bag Design</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-
-                                        <!-- signle item -->
-                                        <div class="isotop-item mockup design">
-                                            <div class="fillter-item bg-catkrill">
-                                                <a class="img" href="" data-bs-toggle="modal"
-                                                    data-bs-target="#portfolio-1">
-                                                    <img src="assets/img/work/work-img-6.png" alt="">
-                                                </a>
-                                                <span class="item-subtitle">Travel Landing , UX/UI </span>
-                                                <h6 class="item-title">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#portfolio-1">Chul
-                                                        urina</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-500 transition-colors duration-300">Aura Dione</h6>
                                     </div>
-
-                                </div>
+                                </article>
+                                <!-- Portfolio Item 3 -->
+                                <article class="portfolio-item logo mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-green-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-green-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-3.png" alt="T-Shirt Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-green-500 transition-colors duration-300">T-Shirt Design</h6>
+                                    </div>
+                                </article>
+                                <!-- Portfolio Item 4 -->
+                                <article class="portfolio-item mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-purple-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-purple-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-4.png" alt="Packaging Box" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-purple-500 transition-colors duration-300">Packaging Box</h6>
+                                    </div>
+                                </article>
+                                <!-- Portfolio Item 5 -->
+                                <article class="portfolio-item design logo show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-yellow-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-yellow-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-5.png" alt="Modern Bag Design" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Travel Landing, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors duration-300">Modern Bag Design</h6>
+                                    </div>
+                                </article>
 
                             </div>
-                        </div>
 
-                        <!-- footer copyright -->
-                        <div class="footer-copyright text-center bg-light-white-2 pt-25 pb-25">
-                            <span>© 2024 All Rights Reserved by <a href="https://themeforest.net/user/elite-themes24"
-                                    target="_blank" rel="noopener noreferrer">elite-themes24</a>.</span>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- resume-page-end -->
-
-                <!-- main-menu-start -->
-                <div class="col-xxl-1 d-xxl-block d-none">
-                    <div class="bostami-main-menu-wrap">
-                        <nav class="bastami-main-menu main_menu">
-                            <ul>
-                                <li>
-                                    <a href="index.html">
-                                        <span>
-                                            <i class="fa-light fa-address-card"></i>
-                                        </span>
-                                        about
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="resume.html">
-                                        <span>
-                                            <i class="fa-light fa-file-user"></i>
-                                        </span>
-                                        Resume
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="portfolio.html">
-                                        <span>
-                                            <i class="fa-light fa-briefcase"></i>
-                                        </span>
-                                        Works
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">
-                                        <span>
-                                            <i class="fa-light fa-newspaper"></i>
-                                        </span>
-                                        Blogs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        <span>
-                                            <i class="fa-light fa-address-book"></i>
-                                        </span>
-                                        contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <!-- main-menu-end -->
-
+                            <!-- Footer -->
+                            <div class="mt-12 sm:mt-16">
+                                <div class="py-4 sm:py-6 bg-gray-50 rounded-xl text-center">
+                                    <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
+                                </div>
+                            </div>
+                        </section>
             </div>
 
 
+            <!-- naviagtion bar  -->
+                                     <div class=" min-h-screen hidden md:block ">
+                  <div class="flex flex-col space-y-3 bg-white rounded-3xl p-4 shadow-lg">
+    <!-- About -->
+    <a href="home-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-address-card text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">About</span>
+    </a>
+
+    <!-- Resume -->
+    <a href="resume-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-file-user text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Resume</span>
+    </a>
+
+    <!-- Works -->
+    <a href="portfolio-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-briefcase text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Works</span>
+    </a>
+
+    <!-- Blogs (Active) -->
+    <a href="blog-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl scale-105 transition-all duration-300 group">
+      <i class="fa-regular fa-newspaper text-white text-xl"></i>
+      <span class="mt-1 text-xs font-medium text-white">Blogs</span>
+    </a>
+
+    <!-- Contact -->
+    <a href="contact-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-address-book text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Contact</span>
+    </a>
+  </div>
+            </div>
         </div>
 
         <!-- portfolio-modal-start -->
-        <div class="modal portfolio-modal-box fade" id="portfolio-1" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal">
-                            <i class="far fa-times"></i>
-                        </button>
+        <div id="portfolio-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+
+            <!-- Modal Content -->
+            <div class="modal-content relative w-full max-w-md md:max-w-lg lg:max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                <!-- Header (Sticky) -->
+                <div class="bg-white px-6 py-4 border-b border-gray-200 sticky top-0 z-10 flex justify-between items-start">
+                    <div>
+                        <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900">Project Title</h3>
+                        <p id="modal-sub" class="text-xs sm:text-sm text-gray-500 mt-1">Category & details</p>
                     </div>
+                    <button id="modal-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <i class="fas fa-times text-gray-500"></i>
+                    </button>
+                </div>
 
-                    <div class="modal-body">
-
-                        <h6 class="blog-title">
-                            Chul urina
-                        </h6>
-
-                        <div class="portfolio-modal-table">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3 class="portfolio-modal-table-text">
-                                        <i class="fa-regular fa-file-lines"></i>
-                                        Project : <span>Website</span>
-                                    </h3>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="portfolio-modal-table-text">
-                                        <i class="fa-regular fa-user "></i>
-                                        Client : <span>Envato</span>
-                                    </h3>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="portfolio-modal-table-text">
-                                        <i class="fa-solid fa-code"></i>
-                                        Langages : <span> Photoshop, Figma</span>
-                                    </h3>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="portfolio-modal-table-text">
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                        Preview : <a href="#">www.envato.com</a>
-                                    </h3>
-                                </div>
+                <!-- Scrollable Content -->
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 sm:space-y-6">
+                    <!-- Project Info Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-pink-50 to-red-50 rounded-xl border border-pink-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-file-alt text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Project</p>
+                                <p class="text-xs sm:text-sm font-bold text-gray-900">Photoshop, Figma</p>
                             </div>
                         </div>
-
-                        <div class="h1-modal-paragraph">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro
-                                sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore
-                                dolorum conseqr quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed,
-                                enim corporis omnis doloremque soluta inventore dolorum consequuntur quo obcaecati rerum
-                                sit non.</p>
-
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro
-                                sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore
-                                dolorum consetur quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed,
-                                sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente
-                                molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum
-                                consequuntur.</p>
-
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-link text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Preview</p>
+                                <a id="modal-preview" href="#" class="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700" target="_blank">Visit Site</a>
+                            </div>
                         </div>
-                        <div class="h1-modal-img">
-                            <img src="assets/img/work/portfolio-modal-img-1.jpg" alt="">
-                        </div>
-
                     </div>
 
+                    <!-- Project Image -->
+                    <div class="w-full h-40 sm:h-48 md:h-64 lg:h-80 bg-gray-100 rounded-xl overflow-hidden shadow-inner border">
+                        <img id="modal-img" src="assets/img/work/work-img-1.png" alt="Project Image" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="text-gray-700 text-sm md:text-base leading-relaxed space-y-4">
+                        <p class="first-letter:text-3xl sm:first-letter:text-4xl first-letter:font-bold first-letter:text-pink-500 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequntur quo obcaecati rerum sit non.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consetur quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequntur.
+                        </p>
+                        <div class="mt-6 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-800 font-medium italic">"This project showcases modern design principles with a focus on user experience and visual appeal. Every detail has been carefully crafted to deliver exceptional results."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer (Sticky) -->
+                <div class="bg-gray-50 px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:justify-between gap-3 border-t border-gray-200 sticky bottom-0 z-10">
+                    <button id="modal-close-footer" class="px-4 sm:px-5 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium transition-colors duration-300 text-sm sm:text-base">
+                        Close
+                    </button>
+                    <a id="modal-action-btn" href="#" target="_blank" class="px-4 sm:px-5 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 rounded-lg font-medium shadow transition-all duration-300 text-center text-sm sm:text-base">
+                        Visit Site
+                    </a>
                 </div>
             </div>
         </div>
         <!-- portfolio-modal-end -->
 
-
     </div>
 
     <!-- JS here -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/swipper-bundle.min.js"></script>
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
+    <script>
+        // DOM Elements (Modal related only)
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const modal = document.getElementById('portfolio-modal');
+        const modalClose = document.getElementById('modal-close-footer');
+        const modalCloseTop = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSub = document.getElementById('modal-sub');
+        const modalImg = document.getElementById('modal-img');
+        const modalPreview = document.getElementById('modal-preview');
+        const modalActionBtn = document.getElementById('modal-action-btn');
+        const mainHeader = document.getElementById('main-header');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
 
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Close mobile menu when clicking backdrop
+        mobileMenuBackdrop.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        // Open Modal
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('h6').textContent;
+                const sub = item.querySelector('span').textContent;
+                const img = item.querySelector('img').src;
+                const link = item.querySelector('a')?.href || '#';
+
+                modalTitle.textContent = title;
+                modalSub.textContent = sub;
+                modalImg.src = img;
+                modalPreview.href = link;
+                modalActionBtn.href = link;
+
+                // Lower header z-index
+                mainHeader.classList.add('header-behind');
+
+                // Show modal
+                modal.classList.remove('hidden', 'opacity-0');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+
+                // Trigger animation
+                setTimeout(() => modal.classList.add('opacity-100'), 10);
+            });
+        });
+
+        // Close Modal Function
+        const closeModal = () => {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                mainHeader.classList.remove('header-behind');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        };
+
+        // Modal Close Events
+        modalClose.addEventListener('click', closeModal);
+        modalCloseTop.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('bg-black')) {
+                closeModal();
+            }
+        });
+
+        // Keyboard: Escape closes modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Prevent scrolling issues on mobile
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+        });
+
+        // Handle window resize for responsive adjustments
+        window.addEventListener('resize', () => {
+            // Close mobile menu on resize to larger screens
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+    </script>
+</body>
 </html>

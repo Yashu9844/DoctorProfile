@@ -1,279 +1,591 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="zxx">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami - Home Page One</title>
+    <title>Bostami - Resume</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'prink': '#fce8f1',
-                        'catkrill': '#e6f7ff',
-                    }
-                }
+    
+    <style>
+        .social-facebook:hover {
+            background-color: #1877F2;
+        }
+        
+        .social-twitter:hover {
+            background-color: #1DA1F2;
+        }
+        
+        .social-instagram:hover {
+            background-color: #E4405F;
+        }
+        
+        .social-linkedin:hover {
+            background-color: #0077B5;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .mobile-nav-link {
+                display: block;
+                padding: 12px 16px;
+                border-radius: 12px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .mobile-nav-link:hover {
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                color: white;
+                transform: translateX(4px);
+            }
+            
+            .mobile-nav-bg {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+                transition: left 0.3s ease;
+                z-index: -1;
+            }
+            
+            .mobile-nav-link:hover .mobile-nav-bg {
+                left: 0;
+            }
+            
+            .mobile-nav-content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                gap: 12px;
             }
         }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-cover bg-no-repeat" style="background-image: url('assets/img/bg/page-bg-1.jpg')">
-    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
-        <div class="h-1 w-full bg-gray-200 relative overflow-hidden max-w-xs">
-            <div class="absolute top-0 left-0 h-full w-1/2 bg-blue-500 animate-loader"></div>
-        </div>
-    </div>
 
-    <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm py-4 mb-8">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between">
-                <a href="../index.html" class="flex items-center">
-                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-8">
-                </a>
-
-                <div class="flex items-center space-x-4">
-                    <button class="dark-mode-toggle p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-yellow-300">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
-                    
-                    <button class="mobile-menu-toggle flex flex-col space-y-1.5 p-2">
-                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
-                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
-                        <span class="block w-6 h-0.5 bg-gray-800 dark:bg-white"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="mobile-menu fixed inset-0 z-30 bg-white dark:bg-gray-900 hidden overflow-y-auto">
-        </div>
-
-    <main class="container mx-auto px-4 pb-12">
-        <div class="flex flex-col lg:flex-row gap-8">
-            <aside class="w-full lg:w-[20%]">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col items-center">
-                    <div class="flex justify-center pt-8">
-                        <div class="w-32 h-32 rounded-full border-4 border-white dark:border-gray-700 shadow-md overflow-hidden">
-                            <img src="assets/img/parsonal-info/parson-img-1.png" alt="Profile" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-
-                    <div class="px-6 py-4 text-center">
-                        <h1 class="text-xl font-bold text-gray-800 dark:text-white">Bostami Hassan</h1>
-                        <p class="text-gray-600 dark:text-gray-300 mt-1">UI/UX Designer</p>
-
-                        <div class="flex justify-center space-x-3 my-6">
-                            <a href="#" class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition">
-                                <i class="fab fa-facebook-f text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500 transition">
-                                <i class="fab fa-twitter text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center hover:opacity-90 transition">
-                                <i class="fab fa-instagram text-sm"></i>
-                            </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition">
-                                <i class="fab fa-linkedin-in text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="space-y-4 text-left mb-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-mobile-screen-button text-blue-500 mt-1 mr-3"></i>
-                                <div>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Phone</p>
-                                    <p class="text-sm text-gray-700 dark:text-gray-300">+123 456 7890</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="far fa-envelope-open-text text-blue-500 mt-1 mr-3"></i>
-                                <div>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Email</p>
-                                    <p class="text-sm text-gray-700 dark:text-gray-300">example@mail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="fas fa-location-dot text-blue-500 mt-1 mr-3"></i>
-                                <div>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Location</p>
-                                    <p class="text-sm text-gray-700 dark:text-gray-300">Hong kong china</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <i class="far fa-calendar-days text-blue-500 mt-1 mr-3"></i>
-                                <div>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">Birthday</p>
-                                    <p class="text-sm text-gray-700 dark:text-gray-300">May 27, 1990</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="px-6 pb-6">
-                            <button class="w-full flex items-center justify-center px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition">
-                                <i class="far fa-download mr-2"></i>
-                                Download CV
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <div class="w-full lg:w-[68%]">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <section class="p-8">
-                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">About</h2>
-                        <p class="text-gray-600 dark:text-gray-300 mb-3">
-                            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. 
-                            I enjoy turning complex problems into simple, beautiful and intuitive designs.
-                        </p>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            My aim is to bring across your message and identity in the most creative way. 
-                            I created web design for many famous brand companies.
-                        </p>
-                    </section>
-
-                    <section class="p-8 border-t border-gray-100 dark:border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-6">What I do!</h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-pink-50 dark:bg-gray-700 rounded-lg p-6 flex">
-                                <i class="fas fa-swatchbook text-pink-500 text-2xl mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">UI/UX Design</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-50 dark:bg-gray-700 rounded-lg p-6 flex">
-                                <i class="fas fa-th-large text-blue-500 text-2xl mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">App Development</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-blue-50 dark:bg-gray-700 rounded-lg p-6 flex">
-                                <i class="fas fa-camera-retro text-blue-500 text-2xl mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Photography</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-pink-50 dark:bg-gray-700 rounded-lg p-6 flex">
-                                <i class="fas fa-code text-blue-500 text-2xl mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Web Development</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="bg-gray-50 dark:bg-gray-700 p-8 border-t border-gray-100 dark:border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white text-center mb-8">Clients</h3>
-                        
-                        <div class="flex flex-wrap justify-center items-center gap-8">
-                            <img src="assets/img/client/client-logo-1.png" alt="Client" class="h-12 object-contain">
-                            <img src="assets/img/client/client-logo-2.png" alt="Client" class="h-12 object-contain">
-                            <img src="assets/img/client/client-logo-3.png" alt="Client" class="h-12 object-contain">
-                            <img src="assets/img/client/client-logo-4.png" alt="Client" class="h-12 object-contain">
-                        </div>
-                    </section>
-
-                    <footer class="py-4 text-center border-t border-gray-100 dark:border-gray-700">
-                        <p class="text-sm text-gray-600 dark:text-gray-400">
-                            © 2024 All Rights Reserved by 
-                            <a href="https://themeforest.net/user/elite-themes24" class="text-blue-500 hover:underline">elite-themes24</a>.
-                        </p>
-                    </footer>
-                </div>
-            </div>
-
-            <aside class="w-full lg:w-[12%]">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg py-8 flex flex-col items-center space-y-6 transition-all duration-300">
-                    
-                    <a href="#"
-                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-blue-600 text-white shadow-md">
-                    <i class="far fa-address-card text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
-                    <span class="text-sm font-medium">About</span>
-                    </a>
-
-                    <a href="#"
-                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
-                    <i class="far fa-file-user text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
-                    <span class="text-sm font-medium">Resume</span>
-                    </a>
-
-                    <a href="#"
-                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
-                    <i class="far fa-briefcase text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
-                    <span class="text-sm font-medium">Works</span>
-                    </a>
-
-                    <a href="#"
-                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
-                    <i class="far fa-newspaper text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
-                    <span class="text-sm font-medium">Blogs</span>
-                    </a>
-
-                    <a href="#"
-                    class="group flex flex-col items-center p-4 rounded-xl transition-all duration-300 ease-in-out bg-gray-100 hover:bg-blue-100 text-gray-500 hover:text-blue-600 shadow-md">
-                    <i class="far fa-address-book text-2xl mb-1 transition-transform duration-300 group-hover:scale-110"></i>
-                    <span class="text-sm font-medium">Contact</span>
-                    </a>
-                </div>
-            </aside>
-
-        </div>
-    </main>
-
-    <script>
-        // Simple dark mode toggle
-        document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
-        });
-
-        // Hide preloader when page loads
-        window.addEventListener('load', () => {
-            document.getElementById('preloader').style.display = 'none';
-        });
-    </script>
-
-    <style>
-        /* Animation for preloader */
-        @keyframes loader {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .header-behind {
+            z-index: 30 !important;
         }
-        .animate-loader {
-            animation: loader 1.5s ease-in-out infinite;
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+            border-radius: 4px;
         }
     </style>
+</head>
+
+<body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/page-bg-1.jpg')">
+
+    <div class='main'>
+        <!-- header-start -->
+        <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+                <a href="../index.html" class="transition-transform duration-300 hover:scale-105">
+                    <img src="assets/img/logo/logo-2.png" alt="Logo" class="h-6 md:h-8" />
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden relative z-50 p-2 rounded-lg bg-white shadow-lg transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center">
+                        <span id="hamburger-line-1" class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-pink-500"></span>
+                        <span id="hamburger-line-2" class="block w-5 h-0.5 bg-gray-700 mt-1 transition-all duration-300 group-hover:bg-pink-500"></span>
+                        <span id="hamburger-line-3" class="block w-5 h-0.5 bg-gray-700 mt-1 transition-all duration-300 group-hover:bg-pink-500"></span>
+                    </div>
+                </button>
+                <nav class="hidden md:flex items-center">
+                    <a href="contact-3.html" class="px-4 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                        <i class="fa-light fa-address-book text-lg"></i> Contact
+                    </a>
+                </nav>
+                <div id="mobile-menu" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+                    <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl">
+                        <div class="flex flex-col pt-20 px-6 space-y-2">
+                            <a href="home-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-home text-lg"></i> Home
+                                </span>
+                            </a>
+                            <a href="resume-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-file-user text-lg"></i> Resume
+                                </span>
+                            </a>
+                            <a href="portfolio-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-briefcase text-lg"></i> Works
+                                </span>
+                            </a>
+                            <a href="blog-3.html" class="mobile-nav-link group">
+                                <div class="mobile-nav-bg"></div>
+                                <span class="mobile-nav-content">
+                                    <i class="fa-light fa-newspaper text-lg"></i> Blogs
+                                </span>
+                            </a>
+                            <a href="contact-3.html" class="mt-4 px-4 py-3 text-white bg-gradient-to-r from-pink-500 to-red-500 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
+                                <i class="fa-light fa-address-book text-lg"></i> Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
+
+        <!-- Main Layout Container - Responsive Flex Layout -->
+        <div class="flex flex-col md:flex-row min-h-screen max-w-7xl mt-14 md:mt-32 mx-auto px-4 py-6 md:py-10 gap-6">
+            <!-- Profile Sidebar - Responsive Width -->
+            <div class="w-full md:w-1/3 lg:w-2/5">
+                <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-20 sm:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
+                    <!-- Profile Image - Responsive sizing -->
+                    <div class="absolute left-1/2 -top-16 sm:-top-20 lg:-top-24 transform -translate-x-1/2 z-10">
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                            <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="mt-8 sm:mt-10 lg:mt-12 text-center space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <h4 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
+                                <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
+                            </h4>
+                        </div>
+
+                        <!-- Role -->
+                        <div>
+                            <span class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-3 sm:space-x-4">
+                            <a href="#" class="social-facebook w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#" class="social-twitter w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#" class="social-instagram w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#" class="social-linkedin w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in text-sm"></i>
+                            </a>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="bg-[#f5f9fa] rounded-lg p-5 sm:p-6 space-y-4">
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">+123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-regular fa-envelope-open-text text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Example@Mail.Com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-light fa-calendar-days text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">May 27, 1990</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Download CV Button -->
+                        <div class="text-center">
+                            <a href="#" class="download-btn inline-flex items-center space-x-3 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
+                                <i class="fa-regular fa-download"></i>
+                                <span>Download CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area - Responsive Width -->
+          <div class="w-full md:w-[70%] lg:w-[85%]">
+     <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 mb-8 fade-slide-up ">
+                <!-- Title Section -->
+                <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+                    <div class="flex items-center gap-4 sm:gap-6">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">About</h2>
+                        <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- About Content -->
+                <div class="mb-12 sm:mb-16">
+                    <p class="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6">
+                        I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                        My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+                    </p>
+                </div>
+
+                <!-- What I Do Section -->
+                <div class="mb-12 sm:mb-16">
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6 sm:mb-8">What I do!</h3>
+                    
+                    <!-- Services Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                        
+                        <!-- UI/UX Design -->
+                        <div class="group cursor-pointer">
+                            <div class="p-4 sm:p-6 rounded-xl bg-pink-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-pink-100 flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-pink-200 rounded-lg flex items-center justify-center text-pink-600 transition-colors duration-300 group-hover:bg-pink-300">
+                                    <i class="fa-light fa-swatchbook text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-pink-500 transition-colors duration-300 mb-2">UI/UX Design</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- App Development -->
+                        <div class="group cursor-pointer">
+                            <div class="p-4 sm:p-6 rounded-xl bg-blue-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-blue-100 flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-blue-200 rounded-lg flex items-center justify-center text-blue-600 transition-colors duration-300 group-hover:bg-blue-300">
+                                    <i class="fa-regular fa-grid-2 text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-blue-500 transition-colors duration-300 mb-2">App Development</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photography -->
+                        <div class="group cursor-pointer">
+                            <div class="p-4 sm:p-6 rounded-xl bg-green-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-green-100 flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-green-200 rounded-lg flex items-center justify-center text-green-600 transition-colors duration-300 group-hover:bg-green-300">
+                                    <i class="fa-regular fa-camera-retro text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-green-500 transition-colors duration-300 mb-2">Photography</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Web Development -->
+                        <div class="group cursor-pointer">
+                            <div class="p-4 sm:p-6 rounded-xl bg-purple-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-purple-100 flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-purple-200 rounded-lg flex items-center justify-center text-purple-600 transition-colors duration-300 group-hover:bg-purple-300">
+                                    <i class="fa-regular fa-code text-lg sm:text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-purple-500 transition-colors duration-300 mb-2">Web Development</h4>
+                                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Clients Section -->
+                <div class="mb-12 sm:mb-16 p-6 sm:p-8 bg-gray-50 rounded-xl">
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-6 sm:mb-8 text-center">Clients</h3>
+                    
+                    <!-- Client Logos Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 items-center">
+                        <div class="flex justify-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
+                            <img src="assets/img/client/client-logo-1.png" alt="Client 1" class="max-h-12 sm:max-h-16 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="flex justify-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
+                            <img src="assets/img/client/client-logo-2.png" alt="Client 2" class="max-h-12 sm:max-h-16 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="flex justify-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
+                            <img src="assets/img/client/client-logo-3.png" alt="Client 3" class="max-h-12 sm:max-h-16 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="flex justify-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300">
+                            <img src="assets/img/client/client-logo-4.png" alt="Client 4" class="max-h-12 sm:max-h-16 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="mt-8 sm:mt-12">
+                    <div class="py-4 sm:py-6 bg-gray-50 rounded-xl text-center">
+                        <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-300">elite-themes24</a>.</p>
+                    </div>
+                </div>
+            </section>
+            </div>
+
+
+            <!-- naviagtion bar  -->
+                                     <div class=" min-h-screen hidden md:block ">
+                  <div class="flex flex-col space-y-3 bg-white rounded-3xl p-4 shadow-lg">
+    <!-- About -->
+    <a href="home-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-address-card text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">About</span>
+    </a>
+
+    <!-- Resume -->
+    <a href="resume-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-file-user text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Resume</span>
+    </a>
+
+    <!-- Works -->
+    <a href="portfolio-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-briefcase text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Works</span>
+    </a>
+
+    <!-- Blogs (Active) -->
+    <a href="blog-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl scale-105 transition-all duration-300 group">
+      <i class="fa-regular fa-newspaper text-white text-xl"></i>
+      <span class="mt-1 text-xs font-medium text-white">Blogs</span>
+    </a>
+
+    <!-- Contact -->
+    <a href="contact-3.html"
+      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+      <i class="fa-regular fa-address-book text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Contact</span>
+    </a>
+  </div>
+            </div>
+        </div>
+
+        <!-- portfolio-modal-start -->
+        <div id="portfolio-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+
+            <!-- Modal Content -->
+            <div class="modal-content relative w-full max-w-md md:max-w-lg lg:max-w-3xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                <!-- Header (Sticky) -->
+                <div class="bg-white px-6 py-4 border-b border-gray-200 sticky top-0 z-10 flex justify-between items-start">
+                    <div>
+                        <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-gray-900">Project Title</h3>
+                        <p id="modal-sub" class="text-xs sm:text-sm text-gray-500 mt-1">Category & details</p>
+                    </div>
+                    <button id="modal-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <i class="fas fa-times text-gray-500"></i>
+                    </button>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 sm:space-y-6">
+                    <!-- Project Info Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-pink-50 to-red-50 rounded-xl border border-pink-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-file-alt text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Project</p>
+                                <p class="text-xs sm:text-sm font-bold text-gray-900">Photoshop, Figma</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 sm:p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border border-orange-100">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-md">
+                                <i class="fas fa-link text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Preview</p>
+                                <a id="modal-preview" href="#" class="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Image -->
+                    <div class="w-full h-40 sm:h-48 md:h-64 lg:h-80 bg-gray-100 rounded-xl overflow-hidden shadow-inner border">
+                        <img id="modal-img" src="assets/img/work/work-img-1.png" alt="Project Image" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="text-gray-700 text-sm md:text-base leading-relaxed space-y-4">
+                        <p class="first-letter:text-3xl sm:first-letter:text-4xl first-letter:font-bold first-letter:text-pink-500 first-letter:float-left first-letter:mr-2 first-letter:mt-1">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequntur quo obcaecati rerum sit non.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consetur quo obcaecati rerum sit non. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequntur.
+                        </p>
+                        <div class="mt-6 p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-gray-800 font-medium italic">"This project showcases modern design principles with a focus on user experience and visual appeal. Every detail has been carefully crafted to deliver exceptional results."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer (Sticky) -->
+                <div class="bg-gray-50 px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:justify-between gap-3 border-t border-gray-200 sticky bottom-0 z-10">
+                    <button id="modal-close-footer" class="px-4 sm:px-5 py-2 text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg font-medium transition-colors duration-300 text-sm sm:text-base">
+                        Close
+                    </button>
+                    <a id="modal-action-btn" href="#" target="_blank" class="px-4 sm:px-5 py-2 text-white bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 rounded-lg font-medium shadow transition-all duration-300 text-center text-sm sm:text-base">
+                        Visit Site
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- portfolio-modal-end -->
+
+    </div>
+
+    <!-- JS here -->
+    <script>
+        // DOM Elements (Modal related only)
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const modal = document.getElementById('portfolio-modal');
+        const modalClose = document.getElementById('modal-close-footer');
+        const modalCloseTop = document.getElementById('modal-close');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSub = document.getElementById('modal-sub');
+        const modalImg = document.getElementById('modal-img');
+        const modalPreview = document.getElementById('modal-preview');
+        const modalActionBtn = document.getElementById('modal-action-btn');
+        const mainHeader = document.getElementById('main-header');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+        // Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Close mobile menu when clicking backdrop
+        mobileMenuBackdrop.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        // Open Modal
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('h6').textContent;
+                const sub = item.querySelector('span').textContent;
+                const img = item.querySelector('img').src;
+                const link = item.querySelector('a')?.href || '#';
+
+                modalTitle.textContent = title;
+                modalSub.textContent = sub;
+                modalImg.src = img;
+                modalPreview.href = link;
+                modalActionBtn.href = link;
+
+                // Lower header z-index
+                mainHeader.classList.add('header-behind');
+
+                // Show modal
+                modal.classList.remove('hidden', 'opacity-0');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+
+                // Trigger animation
+                setTimeout(() => modal.classList.add('opacity-100'), 10);
+            });
+        });
+
+        // Close Modal Function
+        const closeModal = () => {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                mainHeader.classList.remove('header-behind');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        };
+
+        // Modal Close Events
+        modalClose.addEventListener('click', closeModal);
+        modalCloseTop.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('bg-black')) {
+                closeModal();
+            }
+        });
+
+        // Keyboard: Escape closes modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Prevent scrolling issues on mobile
+        let lastScrollY = 0;
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+        });
+
+        // Handle window resize for responsive adjustments
+        window.addEventListener('resize', () => {
+            // Close mobile menu on resize to larger screens
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+    </script>
 </body>
 </html>

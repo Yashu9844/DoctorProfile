@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami -Resume</title>
+    <title>Bostami - Resume</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -97,80 +97,12 @@
             background: linear-gradient(180deg, #8b5cf6, #7c3aed);
             border-radius: 4px;
         }
-
-        /* Updated layout styles */
-        .layout-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 1024px) {
-            .layout-container {
-                flex-direction: row;
-                align-items: flex-start;
-                padding: 0 1rem;
-                gap: 0.5rem; /* Reduced gap between profile and main content */
-            }
-        }
-
-        .profile-sidebar {
-            width: 100%;
-        }
-
-        @media (min-width: 1024px) {
-            .profile-sidebar {
-                width: 37vw;
-                min-width: 300px;
-                max-width: 420px;
-                flex-shrink: 0;
-            }
-        }
-
-        .main-content-area {
-            flex: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .nav-sidebar {
-            display: none; /* Hide by default on mobile */
-        }
-
-        @media (min-width: 1024px) {
-            .nav-sidebar {
-                display: flex;
-                flex-direction: column;
-                width: 80px;
-                flex-shrink: 0;
-                margin-left: 0.5rem;
-            }
-        }
-
-        .profile-card-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 1rem 0;
-        }
-
-        @media (min-width: 1024px) {
-            .profile-card-wrapper {
-                justify-content: flex-end;
-                padding: 1.5rem 0;
-                padding-right: 0.5rem; /* Reduced right padding */
-            }
-        }
     </style>
 </head>
 
 <body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/page-bg-1.jpg')">
 
     <div class='main'>
-
         <!-- header-start -->
         <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
             <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -227,227 +159,219 @@
         </header>
         <!-- header-end -->
 
-        <!-- Main Layout Container -->
-        <div class="flex min-h-screen layout-container mt-10 md:mt-36 mb-10 ">
-            <div class="min-h-screen w-full md:w-[30vw] ">
-                           <div class="w-full lg:w-[28vw] mx-auto lg:mx-0 mb-8 lg:mb-0">
-                <div class="w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto lg:mr-0 mt-8 sm:mt-12 lg:mt-0">
-                    <!-- Card -->
-                    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
-                        <!-- Profile Image - Responsive sizing -->
-                        <div class="absolute left-1/2 -top-12 sm:-top-16 lg:-top-24 transform -translate-x-1/2 z-10">
-                            <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
-                                <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+        <!-- Main Layout Container - Responsive Flex Layout -->
+        <div class="flex flex-col md:flex-row min-h-screen max-w-7xl mt-14 md:mt-32 mx-auto px-4 py-6 md:py-10 gap-6">
+            <!-- Profile Sidebar - Responsive Width -->
+            <div class="w-full md:w-1/3 lg:w-2/5">
+                <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-20 sm:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
+                    <!-- Profile Image - Responsive sizing -->
+                    <div class="absolute left-1/2 -top-16 sm:-top-20 lg:-top-24 transform -translate-x-1/2 z-10">
+                        <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                            <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="mt-8 sm:mt-10 lg:mt-12 text-center space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <h4 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
+                                <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
+                            </h4>
+                        </div>
+
+                        <!-- Role -->
+                        <div>
+                            <span class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex justify-center space-x-3 sm:space-x-4">
+                            <a href="#" class="social-facebook w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-facebook-f text-sm"></i>
+                            </a>
+                            <a href="#" class="social-twitter w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-twitter text-sm"></i>
+                            </a>
+                            <a href="#" class="social-instagram w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                            </a>
+                            <a href="#" class="social-linkedin w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                <i class="fa-brands fa-linkedin-in text-sm"></i>
+                            </a>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="bg-[#f5f9fa] rounded-lg p-5 sm:p-6 space-y-4">
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">+123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-regular fa-envelope-open-text text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Example@Mail.Com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
+                                <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+                                    <i class="fa-light fa-calendar-days text-lg"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">May 27, 1990</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Content -->
-                        <div class="mt-6 sm:mt-8 lg:mt-10">
-                            <!-- Name -->
-                            <div class="text-center mb-2">
-                                <h4 class="text-xl sm:text-2xl lg:text-[26px] font-bold text-gray-800 leading-tight">
-                                    <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
-                                </h4>
-                            </div>
-
-                            <!-- Role -->
-                            <div class="text-center mb-6 sm:mb-8">
-                                <span class="inline-block bg-gray-100 text-gray-600 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
-                            </div>
-
-                            <!-- Social Links -->
-                            <div class="flex justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8">
-                                <a href="#" class="social-facebook w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-facebook-f text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-twitter w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-twitter text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-instagram w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-instagram text-xs sm:text-sm"></i>
-                                </a>
-                                <a href="#" class="social-linkedin w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                    <i class="fa-brands fa-linkedin-in text-xs sm:text-sm"></i>
-                                </a>
-                            </div>
-
-                            <!-- Contact Information -->
-                            <div class="bg-[#f5f9fa] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 w-full space-y-3 sm:space-y-4">
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-pink-100 text-pink-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-mobile-screen-button text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">+123 456 7890</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-green-100 text-green-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-regular fa-envelope-open-text text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Example@Mail.Com</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
-                                    <div class="bg-orange-100 text-orange-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-solid fa-location-dot text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Hong Kong China</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-3 sm:space-x-4">
-                                    <div class="bg-purple-100 text-purple-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-                                        <i class="fa-light fa-calendar-days text-base sm:text-lg"></i>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
-                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">May 27, 1990</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Download CV Button -->
-                            <div class="text-center">
-                                <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wide">
-                                    <span class="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
-                                        <i class="fa-regular fa-download"></i>
-                                    </span>
-                                    <span>Download CV</span>
-                                </a>
-                            </div>
+                        <!-- Download CV Button -->
+                        <div class="text-center">
+                            <a href="#" class="download-btn inline-flex items-center space-x-3 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
+                                <i class="fa-regular fa-download"></i>
+                                <span>Download CV</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Main Content Area - Responsive Width -->
+          <div class="w-full md:w-[70%] lg:w-[85%]">
+                <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                    <!-- Section Title -->
+                    <div class="flex items-center space-x-4 mb-8">
+                        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Resume</h2>
+                        <div class="h-1 w-24 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
+                    </div>
+
+                    <!-- Education & Experience -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <!-- Education -->
+                        <div class="space-y-4">
+                            <h3 class="flex items-center text-xl font-semibold text-gray-900 mb-4 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                                </svg>
+                                <span>Education</span>
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2021 - 2024</p>
+                                    <h4 class="text-base font-medium text-gray-800">Ph.D In Horribleness - University</h4>
+                                    <p class="text-sm text-gray-600">Los Angeles, CA</p>
+                                </div>
+                                <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2017 - 2021</p>
+                                    <h4 class="text-base font-medium text-gray-800">Computer Science - Imperialize Technical Institute</h4>
+                                </div>
+                                <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2015 - 2017</p>
+                                    <h4 class="text-base font-medium text-gray-800">Graphic Designer - Web Graphy</h4>
+                                    <p class="text-sm text-gray-600">Los Angeles, CA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="space-y-4">
+                            <h3 class="flex items-center text-xl font-semibold text-gray-900 mb-4 space-x-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7V4a1 1 0 011-1h3m10 4V4a1 1 0 00-1-1h-3m-4 4h4m-6 4h6m-8 4h8m-2 4h2" />
+                                </svg>
+                                <span>Experience</span>
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2019 - Present</p>
+                                    <h4 class="text-base font-medium text-gray-800">Sr. Software Tester - Google Inc.</h4>
+                                </div>
+                                <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2015 - 2017</p>
+                                    <h4 class="text-base font-medium text-gray-800">Cr. Web Developer - elite-themes24 ltd.</h4>
+                                </div>
+                                <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
+                                    <p class="text-sm text-gray-500">2014 - 2015</p>
+                                    <h4 class="text-base font-medium text-gray-800">Jr. Web Developer - Creative Gigs</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills & Knowledge -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Skills -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-gray-900">Working Skills</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">Web Design</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+                                        <div class="bg-pink-500 h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">Mobile App</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+                                        <div class="bg-purple-500 h-2 rounded-full" style="width:55%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">Illustrator</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">Photoshop</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+                                        <div class="bg-purple-500 h-2 rounded-full" style="width:72%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Knowledge -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-gray-900">Knowledges</h3>
+                            <div class="flex flex-wrap gap-2 sm:gap-3">
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Digital Design</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Marketing</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Communication</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Social Media</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Time Management</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Flexibility</span>
+                                <span class="bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Print</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="text-center pt-8 mt-8 border-t">
+                        <p class="text-gray-500 text-xs sm:text-sm">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:underline">elite-themes24</a>.</p>
+                    </div>
+                </section>
             </div>
 
- <!-- main section  -->
-<div class="min-h-screen w-[85vw] sm:w-[55vw] md:w-[49vw] mx-auto md:mx-0">
-  <section class="max-w-8xl bg-white rounded-xl  shadow-lg p-6 md:p-10  md:ml-0 md:mr-8 space-y-10">
 
-    <!-- Section Title -->
-    <div class="flex items-center space-x-4">
-      <h2 class="text-3xl font-semibold text-gray-900">Resume</h2>
-      <div class="h-1 w-24 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
-    </div>
-
-    <!-- Education & Experience -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Education -->
-      <div>
-        <h3 class="flex items-center text-xl font-semibold text-gray-900 mb-4 space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
-          </svg>
-          <span>Education</span>
-        </h3>
-        <div class="space-y-4">
-          <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2021 - 2024</p>
-            <h4 class="text-base font-medium text-gray-800">Ph.D In Horribleness - University</h4>
-            <p class="text-sm text-gray-600">Los Angeles, CA</p>
-          </div>
-          <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2017 - 2021</p>
-            <h4 class="text-base font-medium text-gray-800">Computer Science - Imperialize Technical Institute</h4>
-          </div>
-          <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2015 - 2017</p>
-            <h4 class="text-base font-medium text-gray-800">Graphic Designer - Web Graphy</h4>
-            <p class="text-sm text-gray-600">Los Angeles, CA</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience -->
-      <div>
-        <h3 class="flex items-center text-xl font-semibold text-gray-900 mb-4 space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7V4a1 1 0 011-1h3m10 4V4a1 1 0 00-1-1h-3m-4 4h4m-6 4h6m-8 4h8m-2 4h2" />
-          </svg>
-          <span>Experience</span>
-        </h3>
-        <div class="space-y-4">
-          <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2019 - Present</p>
-            <h4 class="text-base font-medium text-gray-800">Sr. Software Tester - Google Inc.</h4>
-          </div>
-          <div class="p-5 bg-pink-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2015 - 2017</p>
-            <h4 class="text-base font-medium text-gray-800">Cr. Web Developer - elite-themes24 ltd.</h4>
-          </div>
-          <div class="p-5 bg-blue-50 rounded-lg shadow-sm">
-            <p class="text-sm text-gray-500">2014 - 2015</p>
-            <h4 class="text-base font-medium text-gray-800">Jr. Web Developer - Creative Gigs</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Skills & Knowledge -->
-    <div class="grid md:grid-cols-2 gap-8 mt-8">
-      <!-- Skills -->
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Working Skills</h3>
-        <div class="space-y-4">
-          <div>
-            <p class="text-sm font-medium text-gray-800">Web Design</p>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-pink-500 h-2 rounded-full" style="width:85%"></div>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-medium text-gray-800">Mobile App</p>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-purple-500 h-2 rounded-full" style="width:55%"></div>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-medium text-gray-800">Illustrator</p>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-blue-500 h-2 rounded-full" style="width:65%"></div>
-            </div>
-          </div>
-          <div>
-            <p class="text-sm font-medium text-gray-800">Photoshop</p>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-purple-500 h-2 rounded-full" style="width:72%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Knowledge -->
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Knowledges</h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Digital Design</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Marketing</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Communication</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Social Media</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Time Management</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Flexibility</span>
-          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Print</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="text-center pt-8 mt-8 border-t">
-      <p class="text-gray-500 text-xs">© 2024 All Rights Reserved by <a href="#" class="text-blue-600 hover:underline">elite-themes24</a>.</p>
-    </div>
-  </section>
-</div>
-
-
-
- <!-- main section ends here -->
-            <div class=" min-h-screen hidden md:block ">
+            <!-- naviagtion bar  -->
+                                     <div class=" min-h-screen hidden md:block ">
                   <div class="flex flex-col space-y-3 bg-white rounded-3xl p-4 shadow-lg">
     <!-- About -->
     <a href="home-3.html"
@@ -485,7 +409,6 @@
     </a>
   </div>
             </div>
-            
         </div>
 
         <!-- portfolio-modal-start -->
@@ -669,5 +592,4 @@
         });
     </script>
 </body>
-
 </html>
