@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bostami - Resume</title>
+    <title>Bostami - Blog Three</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -97,12 +97,54 @@
             background: linear-gradient(180deg, #8b5cf6, #7c3aed);
             border-radius: 4px;
         }
+        
+        /* Enhanced Sticky Profile Card Styles */
+        .profile-card-wrapper {
+            transition: all 0.2s ease-out;
+        }
+        
+        .profile-fixed {
+            position: fixed;
+            top: 80px;
+            z-index: 100;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile-absolute {
+            position: absolute !important;
+            z-index: 100;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile-sticky-placeholder {
+            display: none;
+            transition: none;
+        }
+        
+        /* Smooth state transition overrides */
+        .profile-card-wrapper.transitioning {
+            transition: transform 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+        }
+        
+        /* Mobile responsive - disable sticky on mobile */
+        @media (max-width: 1023px) {
+            .profile-fixed,
+            .profile-absolute {
+                position: relative !important;
+                top: auto !important;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/new-bg.jpg')">
+<body class="bg-cover bg-center min-h-screen overflow-y-auto" style="background-image:url('assets/img/bg/page-bg-1.jpg')">
 
     <div class='main'>
+
         <!-- header-start -->
         <header id="main-header" class="relative z-50 py-4 md:py-6 bg-transparent mt-3 md:mt-5">
             <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -159,112 +201,164 @@
         </header>
         <!-- header-end -->
 
-        <!-- Main Layout Container - Responsive Flex Layout -->
-        <div class="flex flex-col md:flex-row min-h-screen max-w-7xl mt-14 md:mt-32 mx-auto px-4 py-6 md:py-10 gap-6">
-            <!-- Profile Sidebar - Responsive Width -->
-            <div class="w-full md:w-1/3 lg:w-2/5">
-                <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl relative pt-20 sm:pt-24 pb-8 sm:pb-10 px-6 sm:px-8">
-                    <!-- Profile Image - Responsive sizing -->
-                    <div class="absolute left-1/2 -top-16 sm:-top-20 lg:-top-24 transform -translate-x-1/2 z-10">
-                        <div class="w-28 h-28 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
-                            <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-
-                    <!-- Content -->
-                    <div class="mt-8 sm:mt-10 lg:mt-12 text-center space-y-6">
-                        <!-- Name -->
-                        <div>
-                            <h4 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
-                                <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
-                            </h4>
-                        </div>
-
-                        <!-- Role -->
-                        <div>
-                            <span class="inline-block bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
-                        </div>
-
-                        <!-- Social Links -->
-                        <div class="flex justify-center space-x-3 sm:space-x-4">
-                            <a href="#" class="social-facebook w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-facebook-f text-sm"></i>
-                            </a>
-                            <a href="#" class="social-twitter w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-twitter text-sm"></i>
-                            </a>
-                            <a href="#" class="social-instagram w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-instagram text-sm"></i>
-                            </a>
-                            <a href="#" class="social-linkedin w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
-                                <i class="fa-brands fa-linkedin-in text-sm"></i>
-                            </a>
-                        </div>
-
-                        <!-- Contact Information -->
-                        <div class="bg-[#f5f9fa] rounded-lg p-5 sm:p-6 space-y-4">
-                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
-                                <div class="bg-pink-100 text-pink-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                    <i class="fa-solid fa-mobile-screen-button text-lg"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
-                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">+123 456 7890</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
-                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                    <i class="fa-regular fa-envelope-open-text text-lg"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
-                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Example@Mail.Com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200">
-                                <div class="bg-orange-100 text-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                    <i class="fa-solid fa-location-dot text-lg"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
-                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Hong Kong China</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-3 sm:space-x-4">
-                                <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
-                                    <i class="fa-light fa-calendar-days text-lg"></i>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
-                                    <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">May 27, 1990</p>
-                                </div>
+        <div class="flex flex-col lg:flex-row min-h-screen w-full px-3 sm:px-6 lg:px-8 mt-6 md:mt-16 lg:mt-[12vw]">
+            <!-- Left Sidebar: Profile Card -->
+            <div class="w-full lg:w-[37vw] mx-auto lg:mx-0 mb-8 lg:mb-0 relative" id="profile-column">
+                <!-- Sticky placeholder -->
+                <div id="sticky-placeholder" class="profile-sticky-placeholder"></div>
+                
+                <div class="w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto lg:mr-0 mt-8 sm:mt-12 lg:mt-0 profile-card-wrapper" id="profile-card">
+                    <!-- Card -->
+                    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 relative pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 px-6 sm:px-8 transition-all duration-300">
+                        <!-- Profile Image - Responsive sizing -->
+                        <div class="absolute left-1/2 -top-12 sm:-top-16 lg:-top-24 transform -translate-x-1/2 z-10">
+                            <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl bg-gray-300 flex items-center justify-center shadow-xl overflow-hidden">
+                                <img src="assets/img/parsonal-info/parson-img-3.png" alt="avatar" class="w-full h-full object-cover">
                             </div>
                         </div>
 
-                        <!-- Download CV Button -->
-                        <div class="text-center">
-                            <a href="#" class="download-btn inline-flex items-center space-x-3 text-white px-8 py-3 rounded-full font-medium text-sm uppercase tracking-wide">
-                                <i class="fa-regular fa-download"></i>
-                                <span>Download CV</span>
-                            </a>
+                        <!-- Content -->
+                        <div class="mt-6 sm:mt-8 lg:mt-10">
+                            <!-- Name -->
+                            <div class="text-center mb-2">
+                                <h4 class="text-xl sm:text-2xl lg:text-[26px] font-bold text-gray-800 leading-tight">
+                                    <a href="#" class="hover:text-purple-600 transition-colors">Bostami Hassan</a>
+                                </h4>
+                            </div>
+
+                            <!-- Role -->
+                            <div class="text-center mb-6 sm:mb-8">
+                                <span class="inline-block bg-gray-100 text-gray-600 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium">Ui/Ux Designer</span>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="flex justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8">
+                                <a href="#" class="social-facebook w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-facebook-f text-xs sm:text-sm"></i>
+                                </a>
+                                <a href="#" class="social-twitter w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-twitter text-xs sm:text-sm"></i>
+                                </a>
+                                <a href="#" class="social-instagram w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-instagram text-xs sm:text-sm"></i>
+                                </a>
+                                <a href="#" class="social-linkedin w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fa-brands fa-linkedin-in text-xs sm:text-sm"></i>
+                                </a>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="bg-[#f5f9fa] rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 w-full space-y-3 sm:space-y-4">
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-pink-100 text-pink-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-mobile-screen-button text-base sm:text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Phone</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">+123 456 7890</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-green-100 text-green-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-regular fa-envelope-open-text text-base sm:text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Email</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Example@Mail.Com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 sm:space-x-4 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-orange-100 text-orange-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-solid fa-location-dot text-base sm:text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Location</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">Hong Kong China</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3 sm:space-x-4">
+                                    <div class="bg-purple-100 text-purple-600 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+                                        <i class="fa-light fa-calendar-days text-base sm:text-lg"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <span class="block text-xs sm:text-sm text-gray-500 font-medium">Birthday</span>
+                                        <p class="text-base sm:text-lg font-semibold text-gray-900 truncate">May 27, 1990</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Download CV Button -->
+                            <div class="text-center">
+                                <a href="#" class="download-btn inline-flex items-center space-x-2 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-medium text-xs sm:text-sm uppercase tracking-wide">
+                                    <span class="flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5">
+                                        <i class="fa-regular fa-download"></i>
+                                    </span>
+                                    <span>Download CV</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Content Area - Responsive Width -->
-          <div class="w-full md:w-[70%] lg:w-[85%]">
-                                       <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
+            <!-- Right Side: Content + Nav Bar -->
+            <div class="flex-1 p-4 sm:p-6 lg:p-12 relative" id="right-content">
+                <!-- Navigation Bar (Only visible on desktop) -->
+                <div class="hidden lg:block absolute top-0 right-[4vw]">
+                    <div class="flex flex-row space-x-3 bg-white rounded-3xl p-4 shadow-lg">
+                        <!-- About -->
+                        <a href="home-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+                            <i class="fa-regular fa-address-card text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+                            <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">About</span>
+                        </a>
+                        <!-- Resume -->
+                        <a href="resume-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+                            <i class="fa-regular fa-file-user text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+                            <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Resume</span>
+                        </a>
+                        <!-- Works -->
+                        <a href="portfolio-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+                            <i class="fa-regular fa-briefcase text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+                            <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Works</span>
+                        </a>
+                        <!-- Blogs (Active) -->
+                        <a href="blog-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl scale-105 transition-all duration-300 group">
+                            <i class="fa-regular fa-newspaper text-white text-xl"></i>
+                            <span class="mt-1 text-xs font-medium text-white">Blogs</span>
+                        </a>
+                        <!-- Contact -->
+                        <a href="contact-3.html" class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
+                            <i class="fa-regular fa-address-book text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
+                            <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Contact</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="w-full lg:flex-1 h-px mt-6 lg:mt-18">
+                    <main class="py-6 sm:py-8 lg:py-12 px-2 sm:px-4" id="main-content">
+                        <section class="max-w-8xl mx-auto bg-white rounded-xl shadow-xl p-6 sm:p-8 lg:p-12 fade-slide-up">
                             <!-- Title Section -->
                             <div class="mb-8 sm:mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
                                 <div class="flex items-center gap-4 sm:gap-6">
-                                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Blog</h2>
+                                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">Portfolio</h2>
                                     <div class="h-1 w-16 sm:w-20 lg:w-40 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
                                 </div>
                             </div>
 
                             <!-- Portfolio Grid -->
                             <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                                
+                                <!-- Portfolio Item 1 -->
+                                <article class="portfolio-item design mockup show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-red-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-red-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-1.png" alt="Project 1" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Web Design, UX/UI</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-red-500 transition-colors duration-300">Creative Portfolio</h6>
+                                    </div>
+                                </article>
                                 
                                 <!-- Portfolio Item 2 -->
                                 <article class="portfolio-item design mockup show group cursor-pointer">
@@ -306,7 +400,53 @@
                                         <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-yellow-500 transition-colors duration-300">Modern Bag Design</h6>
                                     </div>
                                 </article>
+                                
+                                <!-- Portfolio Item 6 -->
+                                <article class="portfolio-item design logo show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-indigo-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-indigo-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-1.png" alt="Brand Identity" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Brand Identity, Logo</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-indigo-500 transition-colors duration-300">Brand Identity</h6>
+                                    </div>
+                                </article>
+                                
+                                <!-- Portfolio Item 7 -->
+                                <article class="portfolio-item design logo show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-pink-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-pink-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-2.png" alt="Mobile App" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">Mobile App, UI/UX</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-pink-500 transition-colors duration-300">Mobile App Design</h6>
+                                    </div>
+                                </article>
+                                
+                                <!-- Portfolio Item 8 -->
+                                <article class="portfolio-item design logo show group cursor-pointer">
+                                    <div class="p-4 sm:p-6 rounded-xl bg-teal-50 transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 group-hover:bg-teal-100">
+                                        <div class="overflow-hidden rounded-xl mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105">
+                                            <img src="assets/img/work/work-img-3.png" alt="E-commerce" class="w-full h-36 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <span class="text-xs text-gray-400">E-commerce, Web Design</span>
+                                        <h6 class="mt-2 text-base sm:text-lg font-semibold text-gray-900 group-hover:text-teal-500 transition-colors duration-300">E-commerce Platform</h6>
+                                    </div>
+                                </article>
 
+                            </div>
+                            
+                            <!-- Add more content for scrolling -->
+                            <div class="mt-16">
+                                <h3 class="text-2xl font-bold mb-8">About My Work</h3>
+                                <div class="space-y-6">
+                                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequatur quo obcaecati rerum sit non.</p>
+                                    <p class="text-gray-600 leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                    <p class="text-gray-600 leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                                    <p class="text-gray-600 leading-relaxed">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                                    <p class="text-gray-600 leading-relaxed">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque.</p>
+                                    <p class="text-gray-600 leading-relaxed">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+                                </div>
                             </div>
 
                             <!-- Footer -->
@@ -316,47 +456,8 @@
                                 </div>
                             </div>
                         </section>
-            </div>
-
-
-            <!-- naviagtion bar  -->
-                                     <div class=" min-h-screen hidden md:block ">
-                  <div class="flex flex-col space-y-3 bg-white rounded-3xl p-4 shadow-lg">
-    <!-- About -->
-    <a href="home-3.html"
-      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
-      <i class="fa-regular fa-address-card text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
-      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">About</span>
-    </a>
-
-    <!-- Resume -->
-    <a href="resume-3.html"
-      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
-      <i class="fa-regular fa-file-user text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
-      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Resume</span>
-    </a>
-
-    <!-- Works -->
-    <a href="portfolio-3.html"
-      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
-      <i class="fa-regular fa-briefcase text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
-      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Works</span>
-    </a>
-
-    <!-- Blogs (Active) -->
-    <a href="blog-3.html"
-      class="flex flex-col items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl scale-105 transition-all duration-300 group">
-      <i class="fa-regular fa-newspaper text-white text-xl"></i>
-      <span class="mt-1 text-xs font-medium text-white">Blogs</span>
-    </a>
-
-    <!-- Contact -->
-    <a href="contact-3.html"
-      class="flex flex-col items-center justify-center w-20 h-20 bg-gray-100 rounded-2xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 group">
-      <i class="fa-regular fa-address-book text-gray-500 text-xl transition-colors duration-300 group-hover:text-white"></i>
-      <span class="mt-1 text-xs font-medium text-gray-600 transition-colors duration-300 group-hover:text-white">Contact</span>
-    </a>
-  </div>
+                    </main>
+                </div>
             </div>
         </div>
 
@@ -436,9 +537,9 @@
 
     </div>
 
-    <!-- JS here -->
+    <!-- Enhanced JavaScript -->
     <script>
-        // DOM Elements (Modal related only)
+        // DOM Elements
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         const modal = document.getElementById('portfolio-modal');
         const modalClose = document.getElementById('modal-close-footer');
@@ -470,7 +571,7 @@
             }
         });
 
-        // Open Modal
+        // Portfolio Modal Functions
         portfolioItems.forEach(item => {
             item.addEventListener('click', () => {
                 const title = item.querySelector('h6').textContent;
@@ -484,20 +585,15 @@
                 modalPreview.href = link;
                 modalActionBtn.href = link;
 
-                // Lower header z-index
                 mainHeader.classList.add('header-behind');
-
-                // Show modal
                 modal.classList.remove('hidden', 'opacity-0');
                 modal.classList.add('flex');
                 document.body.style.overflow = 'hidden';
 
-                // Trigger animation
                 setTimeout(() => modal.classList.add('opacity-100'), 10);
             });
         });
 
-        // Close Modal Function
         const closeModal = () => {
             modal.classList.remove('opacity-100');
             modal.classList.add('opacity-0');
@@ -509,7 +605,6 @@
             }, 300);
         };
 
-        // Modal Close Events
         modalClose.addEventListener('click', closeModal);
         modalCloseTop.addEventListener('click', closeModal);
 
@@ -519,26 +614,197 @@
             }
         });
 
-        // Keyboard: Escape closes modal
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 closeModal();
             }
         });
 
-        // Prevent scrolling issues on mobile
-        let lastScrollY = 0;
-        window.addEventListener('scroll', () => {
-            lastScrollY = window.scrollY;
+        // Always Visible Sticky Profile Card - No Disappearing
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileCard = document.getElementById('profile-card');
+            const profileColumn = document.getElementById('profile-column');
+            const placeholder = document.getElementById('sticky-placeholder');
+            const mainContent = document.getElementById('main-content');
+            
+            if (!profileCard || !profileColumn || !mainContent) {
+                console.log('Required elements not found for sticky functionality');
+                return;
+            }
+            
+            let isSticky = false;
+            let originalTop = 0;
+            let cardHeight = 0;
+            let contentHeight = 0;
+            let originalRect = null;
+            
+            function calculateDimensions() {
+                // Get profile card position when in normal flow
+                if (!isSticky) {
+                    const rect = profileCard.getBoundingClientRect();
+                    originalTop = rect.top + window.scrollY;
+                    originalRect = {
+                        width: rect.width,
+                        left: rect.left
+                    };
+                }
+                
+                cardHeight = profileCard.offsetHeight;
+                
+                // Get main content height
+                const mainRect = mainContent.getBoundingClientRect();
+                contentHeight = mainRect.bottom + window.scrollY;
+                
+                console.log('Dimensions - originalTop:', originalTop, 'cardHeight:', cardHeight, 'contentHeight:', contentHeight);
+            }
+            
+            function updateStickyBehavior() {
+                // Skip on mobile/tablet
+                if (window.innerWidth < 1024) {
+                    if (isSticky) {
+                        removeSticky();
+                    }
+                    return;
+                }
+                
+                const scrollTop = window.scrollY;
+                const stickyOffset = 80;
+                
+                // Calculate the maximum scroll position where the card should stop
+                const maxStickyScroll = contentHeight - cardHeight - 100; // 100px buffer from content end
+                
+                if (scrollTop > (originalTop - stickyOffset)) {
+                    if (!isSticky) {
+                        makeSticky();
+                    }
+                    
+                    // Adjust position when reaching bottom boundary
+                    if (scrollTop >= maxStickyScroll) {
+                        // Calculate how much to push the card up from its sticky position
+                        const pushUp = scrollTop - maxStickyScroll;
+                        const newTop = Math.max(20, stickyOffset - pushUp); // Don't go above 20px from top
+                        profileCard.style.top = newTop + 'px';
+                    } else {
+                        // Normal sticky position
+                        profileCard.style.top = stickyOffset + 'px';
+                    }
+                } else {
+                    if (isSticky) {
+                        removeSticky();
+                    }
+                }
+            }
+            
+            function makeSticky() {
+                if (isSticky) return;
+                
+                const rect = profileCard.getBoundingClientRect();
+                
+                // Create placeholder to maintain layout
+                placeholder.style.width = rect.width + 'px';
+                placeholder.style.height = rect.height + 'px';
+                placeholder.style.display = 'block';
+                
+                // Apply fixed positioning
+                profileCard.style.position = 'fixed';
+                profileCard.style.top = '80px';
+                profileCard.style.left = rect.left + 'px';
+                profileCard.style.width = rect.width + 'px';
+                profileCard.style.zIndex = '100';
+                profileCard.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                profileCard.style.transition = 'top 0.2s ease-out';
+                
+                isSticky = true;
+                console.log('Profile card is now sticky');
+            }
+            
+            function removeSticky() {
+                if (!isSticky) return;
+                
+                // Reset all styles
+                profileCard.style.position = '';
+                profileCard.style.top = '';
+                profileCard.style.left = '';
+                profileCard.style.width = '';
+                profileCard.style.zIndex = '';
+                profileCard.style.boxShadow = '';
+                profileCard.style.transition = '';
+                
+                // Remove placeholder
+                placeholder.style.display = 'none';
+                
+                isSticky = false;
+                console.log('Profile card returned to normal flow');
+            }
+            
+            function makeBottomSticky() {
+                // Calculate position to anchor at bottom boundary
+                const targetTop = contentHeight - cardHeight - 100; // 100px buffer from content end
+                const columnTop = profileColumn.offsetTop;
+                const relativeTop = Math.max(0, targetTop - columnTop);
+                const columnRect = profileColumn.getBoundingClientRect();
+                const relativeLeft = originalRect ? (originalRect.left - (columnRect.left - window.scrollX)) : 0;
+                
+                // Keep placeholder to maintain layout
+                if (placeholder.style.display === 'none') {
+                    const rect = profileCard.getBoundingClientRect();
+                    placeholder.style.width = rect.width + 'px';
+                    placeholder.style.height = rect.height + 'px';
+                    placeholder.style.display = 'block';
+                }
+                
+                // Apply absolute positioning within the column at bottom boundary
+                profileCard.style.position = 'absolute';
+                profileCard.style.top = relativeTop + 'px';
+                profileCard.style.left = relativeLeft + 'px';
+                profileCard.style.width = originalRect ? originalRect.width + 'px' : '100%';
+                profileCard.style.zIndex = '100';
+                profileCard.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                profileCard.style.transition = 'top 0.2s ease-out';
+                
+                console.log('Profile card positioned at bottom boundary');
+            }
+            
+            // Debounced scroll handler
+            let scrollTimeout;
+            function onScroll() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateStickyBehavior, 10);
+            }
+            
+            function onResize() {
+                // Reset sticky state on resize
+                if (isSticky) {
+                    removeSticky();
+                }
+                
+                // Recalculate dimensions
+                setTimeout(() => {
+                    calculateDimensions();
+                    updateStickyBehavior();
+                }, 100);
+            }
+            
+            // Event listeners
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onResize);
+            
+            // Initialize
+            setTimeout(() => {
+                calculateDimensions();
+                updateStickyBehavior();
+            }, 100);
+            
+            console.log('Smooth sticky profile card initialized');
         });
 
-        // Handle window resize for responsive adjustments
+        // Handle window resize for mobile menu
         window.addEventListener('resize', () => {
-            // Close mobile menu on resize to larger screens
             if (window.innerWidth >= 768) {
                 mobileMenu.classList.add('translate-x-full');
             }
         });
     </script>
 </body>
+
 </html>
